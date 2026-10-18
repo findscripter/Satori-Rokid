@@ -1,0 +1,205 @@
+{
+  "session_id": "synthetic-display-regression",
+  "synthetic": true,
+  "records": [
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "查看设备",
+      "current_step_id": "cable",
+      "confidence": 0.9,
+      "uncertain": false,
+      "confirmed_completed_step_ids": [],
+      "observed_completed_step_ids": [],
+      "evidence_frame_ids": [
+        "f0"
+      ],
+      "frame_id": "f0",
+      "timestamp_ms": 0,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "连接HDMI线两端",
+      "decision_kind": "observe",
+      "decision_message": "",
+      "image_path": ""
+    },
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "寻找HDMI接口",
+      "current_step_id": "cable",
+      "confidence": 0.9,
+      "uncertain": false,
+      "confirmed_completed_step_ids": [],
+      "observed_completed_step_ids": [],
+      "evidence_frame_ids": [
+        "f1"
+      ],
+      "frame_id": "f1",
+      "timestamp_ms": 2000,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "连接HDMI线两端",
+      "decision_kind": "guide",
+      "decision_message": "请检查HDMI线另一端是否插入显示器。",
+      "image_path": ""
+    },
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "手部遮挡接口",
+      "current_step_id": "cable",
+      "confidence": 0.3,
+      "uncertain": true,
+      "confirmed_completed_step_ids": [],
+      "observed_completed_step_ids": [],
+      "evidence_frame_ids": [
+        "f2"
+      ],
+      "frame_id": "f2",
+      "timestamp_ms": 4000,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "连接HDMI线两端",
+      "decision_kind": "observe",
+      "decision_message": "",
+      "image_path": ""
+    },
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "再次检查接线",
+      "current_step_id": "cable",
+      "confidence": 0.3,
+      "uncertain": true,
+      "confirmed_completed_step_ids": [],
+      "observed_completed_step_ids": [],
+      "evidence_frame_ids": [
+        "f3"
+      ],
+      "frame_id": "f3",
+      "timestamp_ms": 8000,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "连接HDMI线两端",
+      "decision_kind": "observe",
+      "decision_message": "",
+      "image_path": ""
+    },
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "转向电源按钮",
+      "current_step_id": "power",
+      "confidence": 0.9,
+      "uncertain": false,
+      "confirmed_completed_step_ids": [
+        "cable"
+      ],
+      "observed_completed_step_ids": [
+        "cable"
+      ],
+      "evidence_frame_ids": [
+        "f4"
+      ],
+      "frame_id": "f4",
+      "timestamp_ms": 20000,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "打开显示器电源",
+      "decision_kind": "observe",
+      "decision_message": "",
+      "image_path": ""
+    },
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "转头，显示器暂时不可见",
+      "current_step_id": "power",
+      "confidence": 0.3,
+      "uncertain": true,
+      "confirmed_completed_step_ids": [
+        "cable"
+      ],
+      "observed_completed_step_ids": [
+        "cable"
+      ],
+      "evidence_frame_ids": [
+        "f5"
+      ],
+      "frame_id": "f5",
+      "timestamp_ms": 22000,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "打开显示器电源",
+      "decision_kind": "clarify",
+      "decision_message": "当前画面不足以可靠判断进度，请确认你正在进行的步骤。",
+      "image_path": ""
+    },
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "调整显示器菜单",
+      "current_step_id": "input",
+      "confidence": 0.9,
+      "uncertain": false,
+      "confirmed_completed_step_ids": [
+        "cable",
+        "power"
+      ],
+      "observed_completed_step_ids": [
+        "cable",
+        "power"
+      ],
+      "evidence_frame_ids": [
+        "f6"
+      ],
+      "frame_id": "f6",
+      "timestamp_ms": 24000,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "选择正确输入源",
+      "decision_kind": "observe",
+      "decision_message": "",
+      "image_path": ""
+    },
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "选择HDMI输入",
+      "current_step_id": "input",
+      "confidence": 0.9,
+      "uncertain": false,
+      "confirmed_completed_step_ids": [
+        "cable",
+        "power"
+      ],
+      "observed_completed_step_ids": [
+        "cable",
+        "power"
+      ],
+      "evidence_frame_ids": [
+        "f7"
+      ],
+      "frame_id": "f7",
+      "timestamp_ms": 40000,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "选择正确输入源",
+      "decision_kind": "guide",
+      "decision_message": "请将显示器输入源切换到连接的HDMI接口。",
+      "image_path": ""
+    },
+    {
+      "scene": "桌面连接任务（合成回放数据）",
+      "action": "看到笔记本画面",
+      "current_step_id": null,
+      "confidence": 0.9,
+      "uncertain": false,
+      "confirmed_completed_step_ids": [
+        "cable",
+        "power",
+        "input"
+      ],
+      "observed_completed_step_ids": [
+        "cable",
+        "power",
+        "input"
+      ],
+      "evidence_frame_ids": [
+        "f8"
+      ],
+      "frame_id": "f8",
+      "timestamp_ms": 42000,
+      "task_title": "连接笔记本与显示器",
+      "current_step_instruction": "",
+      "decision_kind": "complete",
+      "decision_message": "所有步骤都已由你确认完成。",
+      "image_path": ""
+    }
+  ]
+}

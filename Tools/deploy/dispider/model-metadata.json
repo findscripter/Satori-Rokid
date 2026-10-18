@@ -1,0 +1,210 @@
+{
+  "_id": "67cfe35dad91643b5cb74c25",
+  "id": "Mar2Ding/Dispider",
+  "private": false,
+  "pipeline_tag": "video-text-to-text",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "dispider_reaction",
+    "video",
+    "streaming-video",
+    "multimodal",
+    "qwen2",
+    "cvpr-2025",
+    "video-text-to-text",
+    "arxiv:2501.03218",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 92,
+  "likes": 3,
+  "modelId": "Mar2Ding/Dispider",
+  "author": "Mar2Ding",
+  "sha": "7c5517eaaa4dc3788602af40e077063792c75f6c",
+  "lastModified": "2026-08-14T22:31:37Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "Reaction"
+    ],
+    "model_type": "dispider_reaction",
+    "tokenizer_config": {
+      "bos_token": null,
+      "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+      "eos_token": "<|im_end|>",
+      "pad_token": "<|endoftext|>",
+      "unk_token": null
+    }
+  },
+  "cardData": {
+    "license": "apache-2.0",
+    "library_name": "transformers",
+    "pipeline_tag": "video-text-to-text",
+    "inference": false,
+    "tags": [
+      "video",
+      "streaming-video",
+      "multimodal",
+      "qwen2",
+      "cvpr-2025"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "Reaction"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "86cd055a79eb89014aa80c56e4b997a1d995225c",
+      "size": 3584
+    },
+    {
+      "rfilename": "added_tokens.json",
+      "blobId": "0ef1e7f77f774b79f19924f5281b6447c6beef9c",
+      "size": 107
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "86e8534a1182617c9b401529819dabc10d9e1d45",
+      "size": 976
+    },
+    {
+      "rfilename": "dispider_checkpoint_manifest.json",
+      "blobId": "2ece9c51673b313e3aa63daf445aa8b737734b1b",
+      "size": 1249
+    },
+    {
+      "rfilename": "generation_config.json",
+      "blobId": "c37d48219e693bb003eb59b5403509236469f3ab",
+      "size": 243
+    },
+    {
+      "rfilename": "merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "model-00001-of-00004.safetensors",
+      "blobId": "aa73929a38364dbcd4915255c9af0bb9276d615b",
+      "size": 4877660776,
+      "lfs": {
+        "sha256": "e9431999113a31a7ac409493a6e01d02143d33f7a8386fcfaefe96a51754a135",
+        "size": 4877660776,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00002-of-00004.safetensors",
+      "blobId": "d5e450993a53b25cc0a569b6d5cc3e0dbe1f8f73",
+      "size": 4932751008,
+      "lfs": {
+        "sha256": "3242c9a0b6bf3dd33f134682ca8d39e726b4329c67fe2b823f213de5ba691cb7",
+        "size": 4932751008,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00003-of-00004.safetensors",
+      "blobId": "80fb998471422b8f2b9aaa67d0e526d57b2b2863",
+      "size": 4995822528,
+      "lfs": {
+        "sha256": "811c1c54adbb60728b96e24da2c16da0e6d80db3b8fbb26b30a6f0ec103358f7",
+        "size": 4995822528,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00004-of-00004.safetensors",
+      "blobId": "2bde1d0873ab59dcfe3bc811a0f800a9f18a1579",
+      "size": 4694784928,
+      "lfs": {
+        "sha256": "2c955ce74b47e9e885c63f323c4c9aa4e3b27f295262c9bdd06ee680904f9966",
+        "size": 4694784928,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model.safetensors.index.json",
+      "blobId": "20a9ffe697bf664a484d580f9f56f7d01c767045",
+      "size": 125880
+    },
+    {
+      "rfilename": "perception_decision/added_tokens.json",
+      "blobId": "1e613d5887b2660db23c1a62f2d7e488c8543a3c",
+      "size": 127
+    },
+    {
+      "rfilename": "perception_decision/config.json",
+      "blobId": "9fe04552f44e40ba3f4a5ab08eb95678143463e0",
+      "size": 1016
+    },
+    {
+      "rfilename": "perception_decision/generation_config.json",
+      "blobId": "870b133592a2d13f3b405199c262e58092fa6ef2",
+      "size": 242
+    },
+    {
+      "rfilename": "perception_decision/merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "perception_decision/special_tokens_map.json",
+      "blobId": "f3f8a9dfe40e188767a0c28bf12a474b021e607e",
+      "size": 654
+    },
+    {
+      "rfilename": "perception_decision/tokenizer_config.json",
+      "blobId": "43267ad9b3ab6d6c9c9ceead037b3098aca37cd3",
+      "size": 1714
+    },
+    {
+      "rfilename": "perception_decision/vision_tower/config.json",
+      "blobId": "2c19f6666e0e163c7954df66cb901353fcad088e",
+      "size": 4519
+    },
+    {
+      "rfilename": "perception_decision/vision_tower/preprocessor_config.json",
+      "blobId": "5a12a1eb250987a4eee0e3e7d7338c4b22724be1",
+      "size": 316
+    },
+    {
+      "rfilename": "perception_decision/vocab.json",
+      "blobId": "6bce3a0a3866c4791a74d83d78f6824c3af64ec3",
+      "size": 3383407
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "c73158406f950444c098269852556fda2bded400",
+      "size": 388
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "4723c66990b2cdc0ebadacdfc8a8f15e6d6acd14",
+      "size": 1527
+    },
+    {
+      "rfilename": "vocab.json",
+      "blobId": "6bce3a0a3866c4791a74d83d78f6824c3af64ec3",
+      "size": 3383407
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-03-11T07:16:45Z",
+  "safetensors": {
+    "parameters": {
+      "BF16": 9750429184
+    },
+    "total": 9750429184
+  },
+  "usedStorage": 23678972944
+}

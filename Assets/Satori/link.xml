@@ -1,0 +1,6 @@
+<linker>
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="SatoriReplay.ReplayReport" preserve="all" />
+    <type fullname="SatoriReplay.ReplayRecord" preserve="all" />
+  </assembly>
+</linker>

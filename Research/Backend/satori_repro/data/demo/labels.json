@@ -1,0 +1,58 @@
+{
+  "labels": [
+    {
+      "frame_id": "f0",
+      "current_step_id": "cable",
+      "observation_step_id": "cable",
+      "decision_kind": "observe"
+    },
+    {
+      "frame_id": "f1",
+      "current_step_id": "cable",
+      "observation_step_id": "cable",
+      "decision_kind": "guide"
+    },
+    {
+      "frame_id": "f2",
+      "current_step_id": "cable",
+      "observation_step_id": "cable",
+      "decision_kind": "observe"
+    },
+    {
+      "frame_id": "f3",
+      "current_step_id": "cable",
+      "observation_step_id": "cable",
+      "decision_kind": "observe"
+    },
+    {
+      "frame_id": "f4",
+      "current_step_id": "power",
+      "observation_step_id": "power",
+      "decision_kind": "observe"
+    },
+    {
+      "frame_id": "f5",
+      "current_step_id": "power",
+      "observation_step_id": "power",
+      "decision_kind": "clarify"
+    },
+    {
+      "frame_id": "f6",
+      "current_step_id": "input",
+      "observation_step_id": "input",
+      "decision_kind": "observe"
+    },
+    {
+      "frame_id": "f7",
+      "current_step_id": "input",
+      "observation_step_id": "input",
+      "decision_kind": "guide"
+    },
+    {
+      "frame_id": "f8",
+      "current_step_id": null,
+      "observation_step_id": "input",
+      "decision_kind": "complete"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "synthetic": true,
+  "observations": {
+    "f0": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "待确认"
+        }
+      ],
+      "action": "查看设备",
+      "current_step_id": "cable",
+      "completed_step_ids": [],
+      "confidence": 0.9,
+      "uncertain": false,
+      "evidence_frame_ids": [
+        "f0"
+      ],
+      "needs_help": false,
+      "help_text": ""
+    },
+    "f1": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "待确认"
+        }
+      ],
+      "action": "寻找HDMI接口",
+      "current_step_id": "cable",
+      "completed_step_ids": [],
+      "confidence": 0.9,
+      "uncertain": false,
+      "evidence_frame_ids": [
+        "f1"
+      ],
+      "needs_help": true,
+      "help_text": "请检查HDMI线另一端是否插入显示器。"
+    },
+    "f2": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "待确认"
+        }
+      ],
+      "action": "手部遮挡接口",
+      "current_step_id": "cable",
+      "completed_step_ids": [],
+      "confidence": 0.3,
+      "uncertain": true,
+      "evidence_frame_ids": [
+        "f2"
+      ],
+      "needs_help": false,
+      "help_text": ""
+    },
+    "f3": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "待确认"
+        }
+      ],
+      "action": "再次检查接线",
+      "current_step_id": "cable",
+      "completed_step_ids": [],
+      "confidence": 0.3,
+      "uncertain": true,
+      "evidence_frame_ids": [
+        "f3"
+      ],
+      "needs_help": false,
+      "help_text": ""
+    },
+    "f4": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "待确认"
+        }
+      ],
+      "action": "转向电源按钮",
+      "current_step_id": "power",
+      "completed_step_ids": [
+        "cable"
+      ],
+      "confidence": 0.9,
+      "uncertain": false,
+      "evidence_frame_ids": [
+        "f4"
+      ],
+      "needs_help": false,
+      "help_text": ""
+    },
+    "f5": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "暂时不可见"
+        }
+      ],
+      "action": "转头，显示器暂时不可见",
+      "current_step_id": "power",
+      "completed_step_ids": [
+        "cable"
+      ],
+      "confidence": 0.3,
+      "uncertain": true,
+      "evidence_frame_ids": [
+        "f5"
+      ],
+      "needs_help": false,
+      "help_text": ""
+    },
+    "f6": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "电源已开启"
+        }
+      ],
+      "action": "调整显示器菜单",
+      "current_step_id": "input",
+      "completed_step_ids": [
+        "cable",
+        "power"
+      ],
+      "confidence": 0.9,
+      "uncertain": false,
+      "evidence_frame_ids": [
+        "f6"
+      ],
+      "needs_help": false,
+      "help_text": ""
+    },
+    "f7": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "电源已开启"
+        }
+      ],
+      "action": "选择HDMI输入",
+      "current_step_id": "input",
+      "completed_step_ids": [
+        "cable",
+        "power"
+      ],
+      "confidence": 0.9,
+      "uncertain": false,
+      "evidence_frame_ids": [
+        "f7"
+      ],
+      "needs_help": true,
+      "help_text": "请将显示器输入源切换到连接的HDMI接口。"
+    },
+    "f8": {
+      "scene": "桌面连接任务（合成回放数据）",
+      "objects": [
+        {
+          "name": "显示器",
+          "state": "显示笔记本画面"
+        }
+      ],
+      "action": "看到笔记本画面",
+      "current_step_id": "input",
+      "completed_step_ids": [
+        "cable",
+        "power",
+        "input"
+      ],
+      "confidence": 0.9,
+      "uncertain": false,
+      "evidence_frame_ids": [
+        "f8"
+      ],
+      "needs_help": false,
+      "help_text": ""
+    }
+  }
+}

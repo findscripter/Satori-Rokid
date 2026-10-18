@@ -1,0 +1,9 @@
+{
+  "Tools\\deploy\\video_eval\\server.py": "c9fc4ee4b7e5e15246157d2edfa1178604b327de30c27ee8be641f9e2005802e",
+  "Tools\\deploy\\video_eval\\prepare_metadata.py": "d4967e9aeb49d20fe8eb1cf062341ddcddaebb1818877f05e0204cd8b028504f",
+  "Tools\\deploy\\video_eval\\freeze_protocol.py": "57fb719a07dd257ab95de636cd5f9a4750173036a39f37bbf8f813f2099ed7de",
+  "Tools\\deploy\\video_eval\\run_cpu_benchmark.py": "e813e9f1efb1ab37ad946f47cffae3a3f24f0d6eeee8f65b2ceb865dda435311",
+  "Tools\\deploy\\video_eval\\test_server.py": "33080d19dfa8cee364d067ba7f7a0a46b0c3cc00d629be19e3efec79cc15befc",
+  "Tools\\deploy\\video_eval\\test_runner.py": "7382f89634ca65c1d4efab5f293136916b143e7a3dae0ac1078eb9bb4e4b414e",
+  "Tools\\deploy\\videochat3\\backend.py": "2e32c33c090db2d91efcbc604338edb7038bc17beca0fe42a7f2f3de7dfedd4e"
+}

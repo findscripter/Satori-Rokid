@@ -1,0 +1,21 @@
+{
+  "task_id": "connect_display",
+  "title": "连接笔记本与显示器",
+  "steps": [
+    {
+      "step_id": "cable",
+      "instruction": "连接HDMI线两端",
+      "completion_criteria": "视频线连接笔记本和显示器"
+    },
+    {
+      "step_id": "power",
+      "instruction": "打开显示器电源",
+      "completion_criteria": "显示器电源开启"
+    },
+    {
+      "step_id": "input",
+      "instruction": "选择正确输入源",
+      "completion_criteria": "屏幕显示笔记本画面"
+    }
+  ]
+}

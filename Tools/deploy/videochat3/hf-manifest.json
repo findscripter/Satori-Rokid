@@ -1,0 +1,252 @@
+{
+  "_id": "6a4a6080188ffded121ef87f",
+  "id": "MCG-NJU/VideoChat3-4B",
+  "private": false,
+  "pipeline_tag": "video-text-to-text",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "videochat3",
+    "feature-extraction",
+    "video-language-model",
+    "vision-language-model",
+    "multimodal",
+    "video-understanding",
+    "image-understanding",
+    "streaming-video",
+    "video-text-to-text",
+    "custom_code",
+    "en",
+    "zh",
+    "arxiv:2607.14935",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 2763,
+  "likes": 31,
+  "modelId": "MCG-NJU/VideoChat3-4B",
+  "author": "MCG-NJU",
+  "sha": "9f6107bdfee9686dfe493444022f5cf79a1a6acf",
+  "lastModified": "2026-10-02T07:41:05Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "VideoChat3ForConditionalGeneration"
+    ],
+    "auto_map": {
+      "AutoProcessor": "processing_videochat3.VideoChat3Processor",
+      "AutoConfig": "configuration_videochat3.VideoChat3Config",
+      "AutoModel": "modeling_videochat3.VideoChat3ForConditionalGeneration",
+      "AutoModelForCausalLM": "modeling_videochat3.VideoChat3ForConditionalGeneration"
+    },
+    "model_type": "videochat3",
+    "processor_config": {
+      "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {%- if messages[0].content is string %}\n            {{- messages[0].content }}\n        {%- else %}\n            {%- for content in messages[0].content %}\n                {%- if 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' }}\n        {%- if messages[0].content is string %}\n            {{- messages[0].content }}\n        {%- else %}\n            {%- for content in messages[0].content %}\n                {%- if 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- for message in messages %}\n    {%- if message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content in message.content %}\n                {%- if content.type == 'image' or 'image' in content or 'image_url' in content %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                    {%- if add_vision_id %}Picture {{ image_count.value }}: {% endif -%}\n                    <|vision_start|><|image_pad|><|vision_end|>\n                {%- elif content.type == 'video' or 'video' in content %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                    {%- if add_vision_id %}Video {{ video_count.value }}: {% endif -%}\n                    <|vision_start|><|video_pad|><|vision_end|>\n                {%- elif 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role + '\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content_item in message.content %}\n                {%- if 'text' in content_item %}\n                    {{- content_item.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and message.content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content in message.content %}\n                {%- if content.type == 'image' or 'image' in content or 'image_url' in content %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                    {%- if add_vision_id %}Picture {{ image_count.value }}: {% endif -%}\n                    <|vision_start|><|image_pad|><|vision_end|>\n                {%- elif content.type == 'video' or 'video' in content %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                    {%- if add_vision_id %}Video {{ video_count.value }}: {% endif -%}\n                    <|vision_start|><|video_pad|><|vision_end|>\n                {%- elif 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+    },
+    "tokenizer_config": {
+      "bos_token": null,
+      "eos_token": "<|im_end|>",
+      "pad_token": "<|endoftext|>",
+      "unk_token": null
+    },
+    "chat_template_jinja": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {%- if messages[0].content is string %}\n            {{- messages[0].content }}\n        {%- else %}\n            {%- for content in messages[0].content %}\n                {%- if 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' }}\n        {%- if messages[0].content is string %}\n            {{- messages[0].content }}\n        {%- else %}\n            {%- for content in messages[0].content %}\n                {%- if 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- for message in messages %}\n    {%- if message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content in message.content %}\n                {%- if content.type == 'image' or 'image' in content or 'image_url' in content %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                    {%- if add_vision_id %}Picture {{ image_count.value }}: {% endif -%}\n                    <|vision_start|><|image_pad|><|vision_end|>\n                {%- elif content.type == 'video' or 'video' in content %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                    {%- if add_vision_id %}Video {{ video_count.value }}: {% endif -%}\n                    <|vision_start|><|video_pad|><|vision_end|>\n                {%- elif 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role + '\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content_item in message.content %}\n                {%- if 'text' in content_item %}\n                    {{- content_item.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and message.content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content in message.content %}\n                {%- if content.type == 'image' or 'image' in content or 'image_url' in content %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                    {%- if add_vision_id %}Picture {{ image_count.value }}: {% endif -%}\n                    <|vision_start|><|image_pad|><|vision_end|>\n                {%- elif content.type == 'video' or 'video' in content %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                    {%- if add_vision_id %}Video {{ video_count.value }}: {% endif -%}\n                    <|vision_start|><|video_pad|><|vision_end|>\n                {%- elif 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+  },
+  "cardData": {
+    "language": [
+      "en",
+      "zh"
+    ],
+    "library_name": "transformers",
+    "pipeline_tag": "video-text-to-text",
+    "tags": [
+      "video-language-model",
+      "vision-language-model",
+      "multimodal",
+      "video-understanding",
+      "image-understanding",
+      "streaming-video"
+    ],
+    "license": "apache-2.0"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModel",
+    "custom_class": "modeling_videochat3.VideoChat3ForConditionalGeneration",
+    "pipeline_tag": "feature-extraction"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+      "size": 1570
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "55136083c65fa13816ee7259af9085319b4c2000",
+      "size": 4594
+    },
+    {
+      "rfilename": "__init__.py",
+      "blobId": "acd398016271bcc0d0efb970bc307af211ba00ab",
+      "size": 1267
+    },
+    {
+      "rfilename": "added_tokens.json",
+      "blobId": "b54f9135e44c1e81047e8d05cb027af8bc039eed",
+      "size": 707
+    },
+    {
+      "rfilename": "chat_template.jinja",
+      "blobId": "124386803f142761528f710e77ae483f5f8c4fc4",
+      "size": 5292
+    },
+    {
+      "rfilename": "chat_template.json",
+      "blobId": "1081bacf1af7c7c6de4a585ce02cd0fd34e382da",
+      "size": 5499
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "5744392f49e2a4c343f7034e76f21c0dd84f81f2",
+      "size": 1765
+    },
+    {
+      "rfilename": "configuration_videochat3.py",
+      "blobId": "9195f0081beefe02281782ead1d8dcbeb05574ba",
+      "size": 7220
+    },
+    {
+      "rfilename": "demo_vc3.py",
+      "blobId": "95f083142eaa63b2af84a53e093cec0435a8baa4",
+      "size": 1951
+    },
+    {
+      "rfilename": "demo_vc3_proactive.py",
+      "blobId": "6f9cec49065aed2e992b9892674b8a9a8665ecaa",
+      "size": 5948
+    },
+    {
+      "rfilename": "generation_config.json",
+      "blobId": "7bb37933d2d86e4ceaabcc6540be989658f238e9",
+      "size": 269
+    },
+    {
+      "rfilename": "inference_fast_vc3.py",
+      "blobId": "b2cd637eb5805f076c0b2ba1f30a2433ba7ac35e",
+      "size": 18656
+    },
+    {
+      "rfilename": "merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "model-0001-others-save_rank0.safetensors",
+      "blobId": "b2d505fa805c752f99bbcd8e9503c41a64d170cc",
+      "size": 4252181336,
+      "lfs": {
+        "sha256": "4c173466ec6a2c5e1544859021fbeac825067ccd54e80b887372d83b1c281654",
+        "size": 4252181336,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-0002-others-save_rank0.safetensors",
+      "blobId": "444926d2580dab4bad0f0b6a6f0d3ab1955f402c",
+      "size": 4288942328,
+      "lfs": {
+        "sha256": "322af91f1ba81f290cee20d66bf0841be4826091e6e942688243b38bbc26e597",
+        "size": 4288942328,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-0003-others-save_rank0.safetensors",
+      "blobId": "bc84002a7b87d9b60c78829a13eb4fb3711055ad",
+      "size": 403726088,
+      "lfs": {
+        "sha256": "1c16eb013f0224c018db06148e28ee60bc1e2b47b1fffde0e311ed9debd63b90",
+        "size": 403726088,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "model.safetensors.index.json",
+      "blobId": "3a677296360e355ab99441d4ff45db7d53843e56",
+      "size": 75369
+    },
+    {
+      "rfilename": "modeling_videochat3.py",
+      "blobId": "d91935ae9a3bea9c453f3a814295ea44e0b96cc5",
+      "size": 44545
+    },
+    {
+      "rfilename": "preprocessor_config.json",
+      "blobId": "7f14571fd1167d0b2a9fd7e6b833d8051ba32163",
+      "size": 870
+    },
+    {
+      "rfilename": "processing_videochat3.py",
+      "blobId": "6008ea785d0245f0ce06732991971b10802e6e0f",
+      "size": 16139
+    },
+    {
+      "rfilename": "processor_config.json",
+      "blobId": "11e1f15d302c4ba86823d4a1335a47b84542fb2d",
+      "size": 133
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+      "size": 11422654,
+      "lfs": {
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "size": 11422654,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "1d4fba2de0e94e8f97e08927cfb7d084160c2880",
+      "size": 5404
+    },
+    {
+      "rfilename": "video_preprocessor_config.json",
+      "blobId": "f667c152d648c0d7456a84b7fa4e785ec36c1e65",
+      "size": 1020
+    },
+    {
+      "rfilename": "video_processing_videochat3.py",
+      "blobId": "ed0a913f2f66bf17da080e9b373546331024ac2b",
+      "size": 18675
+    },
+    {
+      "rfilename": "videochat3_utils.py",
+      "blobId": "7c54e99637dcf3499312b4be612c492eb021f8a9",
+      "size": 2897
+    },
+    {
+      "rfilename": "vocab.json",
+      "blobId": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "size": 2776833
+    }
+  ],
+  "spaces": [
+    "Etiti/VideoChat3-4B-demo"
+  ],
+  "createdAt": "2026-07-05T13:47:44Z",
+  "safetensors": {
+    "parameters": {
+      "BF16": 4472378352
+    },
+    "total": 4472378352
+  },
+  "usedStorage": 8956272406
+}

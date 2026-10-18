@@ -1,0 +1,63 @@
+{
+  "session_id": "synthetic-display-regression",
+  "frames": [
+    {
+      "frame_id": "f0",
+      "timestamp_ms": 0
+    },
+    {
+      "frame_id": "f1",
+      "timestamp_ms": 2000
+    },
+    {
+      "frame_id": "f2",
+      "timestamp_ms": 4000
+    },
+    {
+      "frame_id": "f3",
+      "timestamp_ms": 8000
+    },
+    {
+      "frame_id": "f4",
+      "timestamp_ms": 20000
+    },
+    {
+      "frame_id": "f5",
+      "timestamp_ms": 22000
+    },
+    {
+      "frame_id": "f6",
+      "timestamp_ms": 24000
+    },
+    {
+      "frame_id": "f7",
+      "timestamp_ms": 40000
+    },
+    {
+      "frame_id": "f8",
+      "timestamp_ms": 42000
+    }
+  ],
+  "events": [
+    {
+      "timestamp_ms": 0,
+      "type": "confirm_task",
+      "task_id": "connect_display"
+    },
+    {
+      "timestamp_ms": 20000,
+      "type": "confirm_step",
+      "step_id": "cable"
+    },
+    {
+      "timestamp_ms": 24000,
+      "type": "confirm_step",
+      "step_id": "power"
+    },
+    {
+      "timestamp_ms": 42000,
+      "type": "confirm_step",
+      "step_id": "input"
+    }
+  ]
+}

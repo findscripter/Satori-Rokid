@@ -109,7 +109,7 @@ def _execution_contract(meta, prompt_hash, profile_path, expected_profile_sha256
     if not isinstance(profile, dict) or not required <= set(profile) or profile["schema_version"] != 1:
         raise ValueError("Execution profile is missing its declared contract fields")
     bench._text(profile["profile_id"], "execution profile ID")
-    if (profile["model"] != "claude-opus-5-5" or profile["endpoint"] != "cli://reclaude/claude-opus-5-5"
+    if (profile["model"] != "claude-opus-5-5" or profile["endpoint"] != "cli://claude-cli/claude-opus-5-5"
             or profile["generation_parameters"] != {"max_tokens": 4096, "effort": "high"}
             or profile["timeout_seconds"] != 180 or profile["input_representation"] != "claude_cli_image_blocks"
             or profile["prompt_sha256"] != prompt_hash):

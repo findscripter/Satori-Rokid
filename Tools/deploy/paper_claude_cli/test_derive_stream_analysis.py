@@ -116,7 +116,7 @@ def make_run(tmp_path, name, *, fail_code=None):
     class Provider:
         synthetic = False
         model = expected_response_model = derive.MODEL
-        base_url = "cli://reclaude/" + derive.MODEL
+        base_url = "cli://claude-cli/" + derive.MODEL
         generation_parameters = {"max_tokens": 4096, "effort": "high"}
         timeout = 180
         prompt = bench.PROMPT

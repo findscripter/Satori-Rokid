@@ -16,7 +16,7 @@ def load(path):
 def configure_claude(data, run):
     meta = load(run / "run.json")
     profile = {"schema_version": 1, "profile_id": "unit-claude-high", "model": "claude-opus-5-5",
-               "expected_response_model": "claude-opus-5-5", "endpoint": "cli://reclaude/claude-opus-5-5",
+               "expected_response_model": "claude-opus-5-5", "endpoint": "cli://claude-cli/claude-opus-5-5",
                "generation_parameters": {"max_tokens": 4096, "effort": "high"}, "timeout_seconds": 180,
                "input_representation": "claude_cli_image_blocks", "prompt_sha256": meta["prompt_sha256"]}
     profile_path = data / "execution-profile.json"

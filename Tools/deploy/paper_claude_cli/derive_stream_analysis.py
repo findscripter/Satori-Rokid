@@ -67,7 +67,7 @@ def _load_finalized(root):
     validate_parallel_run(root)
     protocol, _ = bench._read(root / "protocol.json")
     if (meta.get("model") != MODEL or meta.get("expected_response_model") != MODEL
-            or meta.get("endpoint") != "cli://reclaude/" + MODEL
+            or meta.get("endpoint") != "cli://claude-cli/" + MODEL
             or meta.get("generation_parameters") != {"max_tokens": 4096, "effort": "high"}
             or protocol.get("provider_sha256") != COLLECTOR_SHA):
         raise ValueError("Source must use the identified frozen Claude collector contract")

@@ -33,7 +33,7 @@ def _redact(value, credential):
     if credential:
         text = text.replace(credential, "[REDACTED]")
     text = re.sub(r"(?i)\bBearer\s+[^\s,;]+", "Bearer [REDACTED]", text)
-    text = re.sub(r"\b(?:sk-|rck_)[A-Za-z0-9_.-]{6,}", "[REDACTED]", text)
+    text = re.sub(r"\bsk-[A-Za-z0-9_.-]{6,}", "[REDACTED]", text)
     text = re.sub(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", "[REDACTED_EMAIL]", text)
     return text
 

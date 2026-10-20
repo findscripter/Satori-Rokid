@@ -9,6 +9,7 @@ from satori_repro.providers import _NoRedirect, _image_data_url
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model", required=True)
+parser.add_argument("--base-url", required=True, help="OpenAI-compatible endpoint, e.g. https://your-endpoint.example/v1")
 parser.add_argument("--image", type=Path)
 parser.add_argument("--output", type=Path, required=True)
 args = parser.parse_args()
@@ -17,7 +18,7 @@ content = [{"type": "text", "text": "Describe the visible hand action and object
 if args.image:
     content.append({"type": "image_url", "image_url": {"url": _image_data_url(args.image)}})
 payload = {"model": args.model, "stream": False, "messages": [{"role": "user", "content": content}]}
-req = request.Request("https://api.axoneraai.com/v1/chat/completions", data=json.dumps(payload).encode(),
+req = request.Request(args.base_url.rstrip("/") + "/chat/completions", data=json.dumps(payload).encode(),
                       headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"})
 start = time.perf_counter()
 try:

@@ -1,4 +1,4 @@
-"""One-process Claude Code/ReClaude provider for frozen paper-data probes.
+"""One-process Claude Code CLI provider for frozen paper-data probes.
 
 Uses the existing CLI authentication; never reads or writes credential files.
 CLI transport is recorded explicitly, including its unavailable temperature
@@ -16,6 +16,7 @@ import math
 import os
 from pathlib import Path
 import re
+import shutil
 import signal
 import subprocess
 import sys
@@ -28,8 +29,11 @@ if str(TOOLS) not in sys.path:
 import satori_paper_benchmark as bench
 
 
-DEFAULT_EXE = Path.home() / "AppData/Local/Programs/reclaude/bin/reclaude.exe"
+# The Claude Code CLI on PATH, or SATORI_CLAUDE_CLI. The hash pins the CLI build behind the published runs; pass
+# --executable and --executable-sha256 to probe with another build.
+DEFAULT_EXE = Path(os.environ.get("SATORI_CLAUDE_CLI") or shutil.which("claude") or "claude")
 DEFAULT_EXE_SHA256 = "d866d40ef7e477844977793b5a044b006dc340684a11d867234bd1d29377a7a2"
+ENDPOINT_PREFIX = "cli://claude-cli/"
 MODEL = "claude-opus-5-5"
 ENV_CONTROLS = {
     "CLAUDE_CODE_MAX_RETRIES": "0",
@@ -50,7 +54,7 @@ def _safe_text(text):
     if not isinstance(text, str):
         raise CliContractError("cli_non_text_response")
     # Never persist credential-shaped output, account email, or local user paths.
-    if re.search(r"\b(?:rck_|sk-|Bearer\s+)[A-Za-z0-9_.-]{8,}|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|[A-Za-z]:[\\/]Users[\\/]|/home/[^ /]+/", text):
+    if re.search(r"\b(?:sk-|Bearer\s+)[A-Za-z0-9_.-]{8,}|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|[A-Za-z]:[\\/]Users[\\/]|/home/[^ /]+/", text):
         raise CliContractError("cli_sensitive_output")
     return text
 
@@ -201,7 +205,7 @@ class ClaudeCliProvider:
         if self.executable_sha256 != executable_sha256:
             raise ValueError("CLI binary differs from the frozen executable hash")
         self.model, self.expected_response_model = model, expected_response_model
-        self.base_url, self.timeout = "cli://reclaude/" + model, timeout
+        self.base_url, self.timeout = ENDPOINT_PREFIX + model, timeout
         self.generation_parameters = {"max_tokens": max_output_tokens, "effort": effort}
         self.traces = []
 

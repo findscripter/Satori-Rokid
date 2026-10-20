@@ -50,7 +50,7 @@ def taxonomy():
 
 
 def mock_provider(tmp_path, monkeypatch, events=None, *, stderr=b"", returncode=0, timeout=False):
-    binary = tmp_path / "fake-reclaude.exe"
+    binary = tmp_path / "fake-claude.exe"
     binary.write_bytes(b"mock-only executable never run")
     calls = []
     raw = b"not-json\n" if events == "invalid" else ("\n".join(json.dumps(e) for e in (events or stream())) + "\n").encode()

@@ -1,0 +1,31 @@
+{
+  "schema": "satori.recording-command-fixtures/1",
+  "source": "offline Windows System.Speech.Synthesis / SAPI",
+  "voice": "Microsoft Huihui Desktop",
+  "rate": 0,
+  "scope": "production Vosk ASR and isolated command routing only; not microphone, keys, live video or audibility acceptance",
+  "fixtures": [
+    {
+      "id": "start",
+      "file": "start.wav",
+      "spoken_text": "开始录像",
+      "bytes": 55246,
+      "sha256": "9b15930e7b13c3fe8ee1b992e99ce9ecce5b4a0a437f6f9291747ddc91240b7e",
+      "duration_ms": 1725,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    },
+    {
+      "id": "stop",
+      "file": "stop.wav",
+      "spoken_text": "停止录像",
+      "bytes": 55246,
+      "sha256": "92a3af58e93c94aa358b1bfdde7afd1e84beee44abf4cb906f9b658f360fce26",
+      "duration_ms": 1725,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    }
+  ]
+}

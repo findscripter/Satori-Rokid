@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "manual_id": "tl-sg105-v4",
+      "synthetic": false,
+      "source_url": "https://static.tp-link.com/2019/201903/20190308/7106508318_TL-SG105(UN)4.0&TL-SG105S(UN)1.1.pdf",
+      "sha256": "3ea5dddb376c52ed80dcfdd2af3431c7aaa76e45d4b0c5ad421ecac60dcb0457",
+      "max_bytes": 4194304,
+      "document_bytes": 2527692,
+      "research_section_ids": [
+        "applicability",
+        "verification-boundary"
+      ]
+    },
+    {
+      "manual_id": "classroom-demo",
+      "synthetic": true
+    }
+  ]
+}

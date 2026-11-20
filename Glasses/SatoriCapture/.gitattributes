@@ -1,0 +1,3 @@
+# The offline recognizer verifies the exact bytes in source-manifest.json.
+app/src/main/assets/vosk-model-small-cn/** -text
+app/src/main/assets/vosk-model-small-cn/ivector/global_cmvn.stats -diff

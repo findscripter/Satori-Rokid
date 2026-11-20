@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Satori · 第一视角实验回放</title>
+  <link rel="stylesheet" href="replay.css">
+  <script defer src="replay-data.js"></script>
+  <script defer src="replay-timeline.js"></script>
+  <script defer src="replay.js"></script>
+</head>
+<body>
+  <header class="topbar"><div class="wrap top-inner">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><b></b></span>Satori</div>
+    <span class="top-rule"></span><span class="top-section">实验回放</span>
+    <a class="download" href="video.mp4" download="Satori_第一视角_前6分钟.mp4"><i data-icon="download"></i>下载视频</a>
+  </div></header>
+  <main class="wrap">
+    <div class="heading">
+      <div><h1>第一视角回放</h1>
+        <div class="metadata"><span><i data-icon="calendar"></i>2026 年 11 月 20 日</span><b>·</b><span>16:32:51 起</span><b>·</b><span>Rokid 眼镜</span></div>
+      </div>
+      <div class="stats"><div><strong id="totalDuration">06:00</strong><span>片段时长</span></div><div><strong id="totalTurns">7</strong><span>对话请求</span></div><div><strong id="totalSpeech">7</strong><span>播报片段</span></div></div>
+    </div>
+    <noscript><p>请允许本地 JavaScript 运行，以使用同步时间轴和对话定位。</p></noscript>
+    <div class="workspace">
+      <section class="card player-card" aria-label="第一视角视频">
+        <div class="card-head"><h2><i data-icon="camera"></i>第一视角</h2><span class="play-state" id="playState">已暂停</span></div>
+        <div class="player" id="player">
+          <div class="stage" id="stage">
+            <video id="video" src="video.mp4" poster="cover.jpg" preload="metadata" playsinline controls aria-label="实验第一视角有声录像"></video>
+            <button class="center-play" id="centerPlay" aria-label="播放视频"><i data-icon="play"></i></button>
+            <p id="mediaError" class="media-error" hidden>视频加载失败。请确认 video.mp4 与本页放在同一目录。</p>
+          </div>
+          <div class="playbar">
+            <button class="iconbtn primary" id="togglePlay" aria-label="播放视频" title="播放 / 暂停"><i data-icon="play"></i></button>
+            <span class="clock"><b id="timeNow">00:00</b><span> / </span>06:00</span>
+            <input id="scrub" class="scrub" type="range" min="0" max="360" step="0.01" value="0" aria-label="视频进度">
+            <button class="iconbtn" id="mute" aria-label="静音" title="静音"><i data-icon="volume"></i></button>
+            <label class="speed" title="播放速度"><select id="speed" aria-label="播放速度"><option value="0.75">0.75×</option><option selected value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+            <button class="iconbtn" id="full" aria-label="进入全屏" title="全屏"><i data-icon="expand"></i></button>
+          </div>
+        </div>
+      </section>
+      <section class="card log" aria-label="交互记录">
+        <div class="card-head"><h2><i data-icon="chat"></i>交互记录</h2>
+          <button id="follow" class="follow" aria-pressed="true" title="播放到下一段时，将该记录滚动到视野内"><i data-icon="follow"></i>跟随播放</button>
+        </div>
+        <div class="tabs" role="tablist" aria-label="记录类型">
+          <button role="tab" id="tab-turns" aria-selected="true" aria-controls="records" data-mode="turns">对话 <span>7</span></button>
+          <button role="tab" id="tab-speech" aria-selected="false" aria-controls="records" tabindex="-1" data-mode="speech">播报 <span>7</span></button>
+          <button role="tab" id="tab-frames" aria-selected="false" aria-controls="records" tabindex="-1" data-mode="frames">取景帧 <span>11</span></button>
+        </div>
+        <div id="records" role="tabpanel" aria-labelledby="tab-turns" tabindex="0"></div>
+      </section>
+    </div>
+    <section class="card time-card">
+      <div class="card-head"><h2><i data-icon="timeline"></i>同步时间轴</h2><span class="timeline-help">点击或拖动定位</span></div>
+      <div id="timeline"></div>
+    </section>
+    <p class="footnote"><i data-icon="info"></i>提问时间取自识别文本写入日志的时刻，播报区间取自设备的播放回调。</p>
+  </main>
+  <dialog id="frameDialog"><div class="dialog-head"><h2>取景帧 <span id="frameTime"></span></h2><button class="iconbtn" id="closeFrame" aria-label="关闭取景帧"><i data-icon="close"></i></button></div><img id="frameImage" alt="眼镜在此时刻采集的画面"><button id="frameSeek" class="frame-seek"><i data-icon="play"></i>从这一帧播放</button></dialog>
+</body>
+</html>

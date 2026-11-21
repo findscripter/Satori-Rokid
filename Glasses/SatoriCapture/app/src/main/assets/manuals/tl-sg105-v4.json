@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "manual_id": "tl-sg105-v4",
+  "title": "TP-Link TL-SG105 UN V4.0 接线与指示灯参考",
+  "model": "TL-SG105(UN) V4.0",
+  "version": "硬件 UN V4.0；手册 7106508318 REV5.0.0（2019）",
+  "source_url": "https://static.tp-link.com/2019/201903/20190308/7106508318_TL-SG105(UN)4.0&TL-SG105S(UN)1.1.pdf",
+  "synthetic": false,
+  "sections": [
+    {
+      "section_id": "applicability",
+      "title": "适用范围与型号核对（研究整理）",
+      "page": null,
+      "text": "这是指定型号手册的局部中文转述，不代表用户现场设备。先核对铭牌型号、硬件版本及接口标识；不匹配时应换用对应手册。本手册覆盖多种交换机，接线示意采用 TL-SG108，不能把图中端口数当作 TL-SG105 的端口数。",
+      "keywords": ["型号", "铭牌", "版本", "TL-SG105", "适用范围", "手册"]
+    },
+    {
+      "section_id": "port-connection",
+      "title": "Connection：交换机接线",
+      "page": 1,
+      "text": "手册连接图将路由器 LAN 口接到交换机 Ethernet 口，再由交换机连接电脑。上游 Internet 连接画在路由器 WAN 一侧。现场应按接口文字核对连接，不能仅凭颜色确定端口。",
+      "keywords": ["网线", "LAN", "WAN", "Ethernet", "路由器", "电脑", "连接", "接线"]
+    },
+    {
+      "section_id": "indicator-meaning",
+      "title": "LED Explanation：电源与链路状态",
+      "page": 1,
+      "text": "本版 Power 亮表示通电。适用于 TL-SG105 的绿色 Link/Act 常亮表示已建立 10/100/1000 Mbps 链路，闪烁表示收发数据，熄灭表示对应端口没有设备链路。",
+      "keywords": ["指示灯", "Power", "Link", "Act", "常亮", "闪烁", "不亮", "链路"]
+    },
+    {
+      "section_id": "link-troubleshooting",
+      "title": "FAQ Q2：接线后 Link/Act 不亮",
+      "page": 2,
+      "text": "按手册检查线缆两端是否插牢、对端设备是否开机并正常工作，以及线长是否小于 100 米。未观察到的检查结果不能写为已确认。",
+      "keywords": ["排障", "不亮", "插牢", "线缆", "开机", "100米", "故障"]
+    },
+    {
+      "section_id": "verification-boundary",
+      "title": "链路与联网的验证边界（研究约束）",
+      "page": null,
+      "text": "Link/Act 只提供链路或活动信息，不能据此宣布互联网可用。最终须在任务所指的电脑上检查指定教学资源是否可访问；眼镜或服务端自身的网络探测不等同于该电脑的结果。型号不确定或证据不足时保留待核实。",
+      "keywords": ["网络", "联网", "互联网", "验证", "教学资源", "待核实", "链路", "Internet"]
+    }
+  ]
+}

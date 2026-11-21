@@ -1,8 +1,26 @@
 # Satori-Rokid
 
-基于 Satori 思路的第一视角环境与任务理解研究原型，包含 **Unity 回放客户端、Python 方法后端、公开数据评测工具**。
+基于 Satori 思路的第一视角环境与任务理解研究原型，包含 **Rokid 眼镜端助手、Unity 回放客户端、Python 方法后端和公开数据评测工具**。
 
-当前已实现多帧观察、目标提议、下一步预测、进度检查、文字指导与缓存。工程正在向 Rokid 场景推进；本仓库尚未包含眼镜实时相机、语音和 IMU 接入，也尚未验证完整任务交互效果。
+### Rokid 眼镜与交互回放
+
+**[在线回看六分钟第一视角实验](https://findscripter.github.io/Satori-Rokid/replay/)**。点击用户发言或助手答复就能跳到视频对应时刻，也可以沿时间轴查看播报和眼镜取景帧。该片段有 7 次对话请求，其中 6 次收到答复、1 次撤销。
+
+眼镜端根据用户当下提出的任务工作，普通追问会附上当轮第一视角图像，答复自动朗读。支持语音控制第一视角有声录像并导出交互与 IMU 记录。[眼镜端构建与使用](Glasses/SatoriCapture/README.md) · [离线回放文件](site/replay/)
+
+[回放页的资源下载区](https://findscripter.github.io/Satori-Rokid/replay/#downloads)提供模型输入原图、量化报告、逐轮指标、评分口径、六分钟原声视频和源码。含 IMU 的完整同步数据包及原实验版离线回放也可从[固定实验资源](https://github.com/findscripter/Satori-Rokid/releases/tag/replay-2026-11-20)下载。
+
+| 代码或资源 | 所在位置 |
+| --- | --- |
+| 实测 App `0.2.20261120.general.1` 对应的公开源码 | [固定提交 `9f9a0a3`](https://github.com/findscripter/Satori-Rokid/tree/9f9a0a3e2b3e73f74a3097a69fe11b8f6bde1521) |
+| App、分析工具及网页源文件 | [`findscripter/general-assistant-replay`](https://github.com/findscripter/Satori-Rokid/tree/findscripter/general-assistant-replay)，向 `main` 提交的 [PR #1](https://github.com/findscripter/Satori-Rokid/pull/1) |
+| 公网网页 | [`findscripter/replay-pages`](https://github.com/findscripter/Satori-Rokid/tree/findscripter/replay-pages)，部署功能分支中 `site/` 的内容 |
+
+复算时，下载“视频与完整同步数据”并解压，用 Python 3.9 或更高版本在功能分支根目录执行以下命令。输入目录应直接包含 `session/` 和 `metadata/`。脚本按请求 ID 归并事件，输出答复率、逐轮和汇总时延；视觉陈述的逐图初评另见下载区的评分说明。
+
+```sh
+python Tools/analyze_replay_metrics.py path/to/extracted-clip --output metrics.json
+```
 
 ## Unity 运行界面
 

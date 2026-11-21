@@ -1,0 +1,99 @@
+{
+  "schema": "satori.voice-command-fixtures/1",
+  "source": "Windows System.Speech.Synthesis / offline SAPI",
+  "voice": "Microsoft Huihui Desktop",
+  "rate": 0,
+  "purpose": "Synthetic PCM injection into production VoiceRecorder sink and Vosk; not microphone, live-speaker or temple-key acceptance",
+  "fixtures": [
+    {
+      "id": "goal",
+      "file": "goal.wav",
+      "spoken_text": "我要整理书桌",
+      "sha256": "a05aa39ca4d4d34bd82c70779b47ae3ef3cd5b4132b9cb8f0b0e500cdfed322b",
+      "bytes": 70126,
+      "duration_ms": 2190,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    },
+    {
+      "id": "confirm",
+      "file": "confirm.wav",
+      "spoken_text": "确认",
+      "sha256": "75b4adceff7cfd16da349a3100754090f06775b31ec19d6012e4546fab32f02c",
+      "bytes": 42926,
+      "duration_ms": 1340,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    },
+    {
+      "id": "pause",
+      "file": "pause.wav",
+      "spoken_text": "暂停",
+      "sha256": "41571f6e4cc952f6556556a52bcb7bd5bc687918194cf6a779105a5e8b1abdc9",
+      "bytes": 47086,
+      "duration_ms": 1470,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    },
+    {
+      "id": "resume",
+      "file": "resume.wav",
+      "spoken_text": "继续",
+      "sha256": "7561c4e94cae25a58b051c1a48791ba7a3fd594c82a79ecba1b125959b4981bb",
+      "bytes": 42286,
+      "duration_ms": 1320,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    },
+    {
+      "id": "repeat",
+      "file": "repeat.wav",
+      "spoken_text": "重复",
+      "sha256": "25a7c8c2b32216a39b5a7a7a83ae061ba3c4cefb972fb2e26c865db60d37ef5a",
+      "bytes": 45006,
+      "duration_ms": 1405,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    },
+    {
+      "id": "stop",
+      "file": "stop.wav",
+      "spoken_text": "结束任务",
+      "sha256": "dd54817fc4bb33701e401e268e76dcf5abf6378d3ecf94890b2680030e108a75",
+      "bytes": 54926,
+      "duration_ms": 1715,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    },
+    {
+      "id": "goal-bare",
+      "file": "goal-bare.wav",
+      "spoken_text": "整理书桌",
+      "role": "alternative_phrasing_diagnostic_only",
+      "sha256": "4b5ab961daa8198bbc8e71fd6b5bf35ac18260f9b9e6be1d469d6659f164ad43",
+      "bytes": 56206,
+      "duration_ms": 1755,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    },
+    {
+      "id": "goal-i-want",
+      "file": "goal-i-want.wav",
+      "spoken_text": "我想整理书桌",
+      "role": "alternative_phrasing_diagnostic_only",
+      "sha256": "18f723b41015adcd2b45ae4d78047f7beaaf97a45a272c062684243fe1de4d9e",
+      "bytes": 72686,
+      "duration_ms": 2270,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width_bits": 16
+    }
+  ]
+}

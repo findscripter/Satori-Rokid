@@ -43,6 +43,7 @@ htmlcov/
 **/Mark12Ding-Dispider-*/
 *.tar.gz
 *.zip
+!/site/replay/downloads/model-inputs-and-core.zip
 *.safetensors
 *.pth
 *.pt

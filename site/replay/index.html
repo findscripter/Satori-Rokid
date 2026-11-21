@@ -14,7 +14,7 @@
   <header class="topbar"><div class="wrap top-inner">
     <div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><b></b></span>Satori</div>
     <span class="top-rule"></span><span class="top-section">实验回放</span>
-    <a class="download" href="video.mp4" download="Satori_第一视角_前6分钟.mp4"><i data-icon="download"></i>下载视频</a>
+    <a class="download" href="#downloads"><i data-icon="download"></i>下载资源</a>
   </div></header>
   <main class="wrap">
     <div class="heading">
@@ -60,6 +60,27 @@
       <div id="timeline"></div>
     </section>
     <p class="footnote"><i data-icon="info"></i>提问时间取自识别文本写入日志的时刻，播报区间取自设备的播放回调。</p>
+    <section id="downloads" class="card resources" aria-labelledby="downloads-title" tabindex="-1">
+      <div class="card-head"><h2 id="downloads-title"><i data-icon="download"></i>实验资源下载</h2></div>
+      <div class="resource-list">
+        <a href="downloads/quantitative-report.pdf" download><strong>量化结果报告</strong><small>一页图表 · PDF</small></a>
+        <a href="downloads/per-turn-metrics.csv" download><strong>逐轮指标</strong><small>7 次请求的延迟、播报和视觉初评 · CSV</small></a>
+        <a href="downloads/scoring-notes.md" download><strong>评分口径与逐轮核对</strong><small>评分分母、事件边界和原图依据 · Markdown</small></a>
+        <a href="downloads/model-inputs-and-core.zip" download><strong>模型输入原图与核心源码</strong><small>6 张答复用图、1 张撤销回合取景图及代码节选 · ZIP</small></a>
+        <a href="video.mp4" download="Satori_第一视角_前6分钟.mp4"><strong>仅下载六分钟视频</strong><small>第一视角画面与原声 · MP4</small></a>
+        <a href="https://github.com/findscripter/Satori-Rokid/releases/download/replay-2026-11-20/video-and-synced-data.zip"><strong>视频与完整同步数据</strong><small>含 IMU、对话、取景帧、事件日志和时钟索引 · ZIP</small></a>
+        <a href="https://github.com/findscripter/Satori-Rokid/releases/download/replay-2026-11-20/offline-replay.zip"><strong>离线交互回放</strong><small>原实验版，解压后打开 index.html · ZIP</small></a>
+        <a href="https://codeload.github.com/findscripter/Satori-Rokid/zip/refs/heads/findscripter/general-assistant-replay"><strong>下载项目源码</strong><small>功能分支的 Android 工程、回放页和量化脚本 · ZIP</small></a>
+      </div>
+      <div class="resource-source">
+        <h3>代码与分支</h3>
+        <dl>
+          <dt>实测 App</dt><dd><code>0.2.20261120.general.1</code>，对应公开源码快照 <a href="https://codeload.github.com/findscripter/Satori-Rokid/zip/9f9a0a3e2b3e73f74a3097a69fe11b8f6bde1521">9f9a0a3（固定版本 ZIP）</a>。</dd>
+          <dt>功能分支</dt><dd><a href="https://github.com/findscripter/Satori-Rokid/tree/findscripter/general-assistant-replay"><code>findscripter/general-assistant-replay</code></a> 包含 App、<a href="https://github.com/findscripter/Satori-Rokid/blob/findscripter/general-assistant-replay/Tools/analyze_replay_metrics.py">量化分析脚本</a>和网页源文件。合入 <code>main</code> 的进度见 <a href="https://github.com/findscripter/Satori-Rokid/pull/1">PR #1</a>。</dd>
+          <dt>网页部署</dt><dd><a href="https://github.com/findscripter/Satori-Rokid/tree/findscripter/replay-pages"><code>findscripter/replay-pages</code></a> 为 GitHub Pages 提供本站的静态文件。</dd>
+        </dl>
+      </div>
+    </section>
   </main>
   <dialog id="frameDialog"><div class="dialog-head"><h2>取景帧 <span id="frameTime"></span></h2><button class="iconbtn" id="closeFrame" aria-label="关闭取景帧"><i data-icon="close"></i></button></div><img id="frameImage" alt="眼镜在此时刻采集的画面"><button id="frameSeek" class="frame-seek"><i data-icon="play"></i>从这一帧播放</button></dialog>
 </body>

@@ -57,3 +57,14 @@ dialog{border:1px solid #b6c6b9;padding:14px;max-width:min(440px,90vw);max-heigh
 @media(max-width:820px){.wrap{width:calc(100% - 28px)}.workspace{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:10px}.playbar{gap:5px;padding:0 8px}.card-head,.tabs{padding-left:13px;padding-right:13px}.record{padding-left:12px;padding-right:12px}.stats div{min-width:60px}.stage{height:330px}.log{height:433px}}
 @media(max-width:650px){.top-inner{min-height:46px}.heading{align-items:flex-start;padding:20px 0 14px}.stats{display:none}.workspace{display:flex;flex-direction:column;gap:12px}.stage{height:clamp(240px,68vw,345px)}.card{border-radius:10px}.card-head{height:41px}.playbar{min-height:44px;gap:6px}.clock{font-size:11px}.speed select{width:47px}.log{height:clamp(290px,46vh,410px)}.time-card{margin-top:12px}.metadata{font-size:11px}.top-inner{gap:12px}.brand{font-size:21px}.download{padding:5px 8px}.tabs{height:35px}.footnote{align-items:flex-start}.footnote .svg-icon{margin-top:2px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.resources{margin-bottom:28px;scroll-margin-top:12px}
+.resource-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:8px;padding:0 18px 16px}
+.resource-list a{position:relative;display:grid;align-content:start;gap:5px;padding:12px 26px 12px 12px;border:1px solid var(--line);border-radius:8px;background:#fafbf8;color:var(--ink);text-decoration:none;line-height:1.45}
+.resource-list a::after{content:"↓";position:absolute;right:10px;top:11px;color:var(--teal)}
+.resource-list a:hover{background:#eef4ed;border-color:#b4c8b8}
+.resource-list small,.resource-source{font-size:12px;color:var(--muted)}
+.resource-source{padding:14px 18px 17px;border-top:1px solid var(--line);line-height:1.65}
+.resource-source h3{font-size:14px;color:var(--ink);margin:0 0 7px}
+.resource-source dl{display:grid;grid-template-columns:max-content minmax(0,1fr);margin:0;gap:4px 13px}
+.resource-source dt{font-weight:650;color:var(--ink)}.resource-source dd{margin:0;overflow-wrap:anywhere}
+.resource-source a{color:#295f50;text-underline-offset:2px}.resource-source code{font-family:var(--mono);font-size:12px}

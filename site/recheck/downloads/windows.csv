@@ -1,0 +1,32 @@
+﻿id,图条,录像,提示原文,观察窗起_秒,观察窗终_秒,最近可见适用采样_秒,随后首次明确过时采样_秒,结论,可见证据
+gpt-6.2-astra_sequence-01_1080,C01,sequence-01,"Turn the skillet handle inward, clear of the other burners, so it won’t get bumped.",1080,1092.0864707999863,1086,,证据不足或断续,开始时锅柄探向灶前；锅的位置及方向改变，末帧转向砧板，不能判定目前是否仍突出。
+gpt-6.2-astra_sequence-01_1290,C02,sequence-01,"Turn the skillet handle inward, clear of the other burners, so it won’t get bumped.",1290,1300.507860499958,1300.507860499958,,至末帧仍适用（右删失）,盖着的锅及黑色锅柄持续可辨，锅柄仍伸向灶台前缘；末帧未见收回。
+gpt-6.2-astra_sequence-01_180,C03,sequence-01,Tuck your left fingertips into a claw grip so your knuckles guide the blade.,180,194.48822890000883,186,190,观察内转旧,186秒仍用左手扶料、右手握刀；188秒调整位置，190秒刀放在板边，两手分开食材。
+gpt-6.2-astra_sequence-01_360,C04,sequence-01,Move the plastic bag off the stovetop so it can’t melt against a hot burner.,360,375.62070320005296,372,374,观察内转旧,372秒袋子仍在炉盘旁；374秒人已把袋子拿到灶外，移开袋子的要求已被完成。
+gpt-6.2-astra_sequence-01_420,C05,sequence-01,Tuck your left fingertips back from the blade before the next cut.,420,433.2198371000122,422,426,观察内转旧,420至422秒仍在刀和菜附近；424秒在收刀，426秒人已转向灶旁平板，之后离开砧板。
+gpt-6.2-astra_sequence-01_480,C06,sequence-01,Set the knife down and tap the egg on the counter to crack it.,480,490.812155899941,482,485.9225665999693,观察内转旧,482秒仍握刀和完整鸡蛋。485.92秒双手已掰开蛋壳，刀已离手；之后碗中出现蛋黄。
+gpt-6.2-astra_sequence-01_570,C07,sequence-01,Curl your fingertips back so your knuckles guide the blade.,570,581.7292543999502,581.7292543999502,,至末帧仍适用（右删失）,板上切番茄，中途短暂抬手后又继续。末帧仍握刀、另一手在扶散开的番茄；未认定每一帧指尖至刀刃的距离。
+gpt-6.2-astra_sequence-01_60,C08,sequence-01,"Turn the handle inward, away from the other burners, so it won’t get bumped.",60,72.93357730004936,72.93357730004936,,至末帧仍适用（右删失）,取纸或开抽屉时局部遮挡，之后能再次看到锅柄伸出灶前。70秒至末帧仍清楚。
+gpt-6.2-astra_sequence-01_720,C09,sequence-01,"Turn the skillet handle inward, clear of the other burners, so it won’t get bumped.",720,734.3989633999881,,,证据不足或断续,锅柄在锅右侧、近相邻台面；视角偏斜，且砧板移到锅上方，不能可靠判断是否伸入碰撞路径。
+gpt-6.2-astra_sequence-02_120,C10,sequence-02,Watch your step around the cord beside your feet.,120,134.24600799998734,120,,证据不足或断续,开冰箱时脚与地面盘线同框，此后移到抽屉前。部分画面边缘还有线，但与双脚的距离、下一步路径不清。
+gpt-6.2-astra_sequence-02_1440,C11,sequence-02,Check the pan now; turn the burner off if you need to focus on the laptop.,1440,1452.395633200009,,,证据不足或断续,起初在电脑台面，后去拿工具，最后朝炉灶转动。没有清楚看到需关的火或锅状态，也不能确认已检查。
+gpt-6.2-astra_sequence-02_1500,C12,sequence-02,Move the paper towel roll farther from the burner.,1500,1511.6257382999756,1506,,证据不足或断续,纸巾卷数次可见于炉灶紧邻的台面；随后画面转向调料，未见纸卷已移动，也无由断言风险已经消失。
+gpt-6.2-astra_sequence-02_2040,C13,sequence-02,Use a dry oven mitt to lift the lid; the metal knob may be hot.,2040,2061.421168299974,2040,2046,观察内转旧,2040秒手在锅盖把上，尚处于揭盖动作；2046秒盖已离锅，另一手在翻动锅内食物。此处判断首次揭盖的时机，不推断把手温度。
+gpt-6.2-astra_sequence-02_2400,C14,sequence-02,Watch your step—move the cord out of the walkway.,2400,2413.3289972000057,2404,,证据不足或断续,人在地面盘线旁移向电脑。较宽视角可见线横跨过道，此后视野收窄；未见线被移走。
+gpt-6.2-astra_sequence-02_570,C15,sequence-02,Watch your step around the cord.,570,583.7668412000057,572,,证据不足或断续,开冰箱时脚下路线及线缆部分可见，随后主要呈现从抽屉取东西。线缆局部还在画面下沿，无法判明当前踩踏路线。
+gpt-6.2-astra_sequence-02_750,C16,sequence-02,Move the cord out of the walkway so it won’t catch your foot.,750,762.1224287999794,750,,证据不足或断续,起初过道地面可见盘线；打开冰箱后只见架内取物，无法证实线缆被移开或仍处在人的动线上。
+gpt-6.2-astra_sequence-02_990,C17,sequence-02,Set the knife flat and use a utensil to clear the garlic from the blade.,990,1005.3570350999944,994,998,观察内转旧,开始用手清刀上食材，994秒仍见手靠近竖起的刀。998秒转成持刀在砧板上处理食材；其后仍在切。
+gpt-6.2-sol_sequence-01_1290,C18,sequence-01,Turn the skillet handle to the side so it won’t get bumped.,1290,1299.472339000029,1299.472339000029,,至末帧仍适用（右删失）,锅柄原本朝前，末帧改成斜前方，但仍伸向灶台前缘。静态帧可判定伸出，无法判定实际会不会碰到。
+gpt-6.2-sol_sequence-01_1560,C19,sequence-01,Turn the skillet handle to the side so it doesn’t get bumped.,1560,1577.770202499989,1576,,证据不足或断续,砧板遮挡之后，1572和1576秒再次可见突向前缘的锅柄。末帧转向砧板，只留锅局部。
+gpt-6.2-sol_sequence-01_180,C20,sequence-01,Curl your fingertips under to keep them clear of the blade.,180,190.88298569998005,186.13519579998683,190,观察内转旧,186.14秒持刀手与扶持手仍靠近切料；190秒刀放在砧板一侧，双手改用来分开食材。
+gpt-6.2-sol_sequence-01_420,C21,sequence-01,Move your fingertips clear before sliding the knife under the greens.,420,430.8844721999485,422,426,观察内转旧,刀和扶持手最初在菜旁，422秒仍在操作，426秒用户已离开菜板转向平板。
+gpt-6.2-sol_sequence-01_630,C22,sequence-01,Curl your fingertips under as you chop.,630,642.2500186999678,630,632,观察内转旧,630秒握刀在番茄旁，632秒双手已松开，画面转向灶台，之后双手碰在一起或开抽屉。
+gpt-6.2-sol_sequence-01_840,C23,sequence-01,Turn the skillet handle inward so it won’t get bumped.,840,850.4157020999701,850.4157020999701,,至末帧仍适用（右删失）,锅柄持续从右侧伸至灶台前缘，操作者从锅前伸手使用平板；未看到锅柄收回，最末帧仍可见。
+gpt-6.2-sol_sequence-02_120,C24,sequence-02,Watch for the cord by your feet before stepping back.,120,130.33261889993446,120,,证据不足或断续,起初电线在脚旁，随后用户已经从冰箱转向水池工具架。脚附近路线不完整，不能判定同一线缆风险已经解除。
+gpt-6.2-sol_sequence-02_1440,C25,sequence-02,Turn off the front-right burner while you’re away from the stove.,1440,1449.7765423000674,,,证据不足或断续,全段主要看到电脑和抽屉，右前炉灶、火力与关火操作均不在可辨视野。
+gpt-6.2-sol_sequence-02_1620,C26,sequence-02,Check the pan before spending more time away from the stove.,1620,1629.8922234000638,,1628,后段可见已过；起初证据不足,起初只见电脑区，无法从这些帧独立确认锅是否需要看管；1628秒已经到炉边，直视并操作锅。可确认“回来看锅”已完成。
+gpt-6.2-sol_sequence-02_2400,C27,sequence-02,Watch your step and move the cord out of the walkway.,2400,2408.5815728000016,2404.610352799995,,证据不足或断续,进电脑区时地面电线可见；2406秒后视野集中在电脑，未观察到清理或离开这段走道。
+gpt-6.2-sol_sequence-02_570,C28,sequence-02,Watch your step around the cord.,570,581.0906097999541,572,,证据不足或断续,开冰箱时地面可见弯曲线缆，随即站定取物，脚周围位置被遮，不能推断是同一次绊倒风险持续或消失。
+gpt-6.2-sol_sequence-02_60,C29,sequence-02,Slide the cutting board fully onto the counter before cutting.,60,75.92410560004646,75.92410560004646,,至末帧仍适用（右删失）,从头到尾砧板前缘明显超出台面，绿色刀持续工作。虽然已经动刀，先停手把砧板移稳仍适用于下一刀。
+gpt-6.2-sol_sequence-02_750,C30,sequence-02,Move the cord out of the walkway to avoid tripping.,750,760.6966239999747,750,,证据不足或断续,拉开冰箱前能看见过道盘线；后续仅观察到冰箱内部，移线要求的前提无法持续核实。
+gpt-6.2-sol_sequence-02_990,C31,sequence-02,Tap the blade lightly against the board to loosen the garlic instead.,990,1002.6689775999985,994,998,观察内转旧,990–994秒可见手指在向刀上取蒜。其后刀转为水平持握，在998秒及之后又在砧板上切料，粘刀脱蒜动作已过。

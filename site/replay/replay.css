@@ -17,6 +17,7 @@ button{border:0;background:none;padding:0}
 .top-rule{height:15px;width:1px;background:#cad3c9}.top-section{color:var(--muted);font-size:13px}
 .download{margin-left:auto;display:flex;gap:6px;align-items:center;text-decoration:none;border:1px solid #cbd4ca;border-radius:7px;padding:7px 12px;background:#fff;color:#304b40;font-size:12px;font-weight:600}
 .download:hover,.iconbtn:hover,.follow:hover,.frame-seek:hover{filter:brightness(.94)}
+.study-nav{margin-left:auto;color:var(--teal);font-size:12px;white-space:nowrap;text-decoration:none}.study-nav:hover{text-decoration:underline}.study-nav+.download{margin-left:0}
 [data-icon],.svg-icon{display:inline-flex;align-items:center;justify-content:center;flex:none}
 .svg-icon{width:17px;height:17px;vertical-align:middle}
 .heading{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0 20px}

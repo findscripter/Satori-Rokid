@@ -16,6 +16,8 @@
 
 ## 数据与模型
 
+长视频复核分析页中的两条 4K 视频及其海报、实验取景图来自 **CaptainCook4D**，Copyright 2023 The University of Texas at Dallas，由源项目按 Apache License 2.0 发布。此项目对视频转码、去除音轨，并抽取及缩放画面。实验模型提示与评审来自本项目。[素材说明](site/recheck/MEDIA-NOTICE.txt) · [许可证全文](site/recheck/LICENSE-CaptainCook4D.txt)
+
 眼镜应用随附 Vosk 中文离线语音识别模型 `vosk-model-small-cn-0.22`，便于在设备上识别中文。原始下载地址、许可证和文件校验值见[模型清单](Glasses/SatoriCapture/app/src/main/assets/vosk-model-small-cn/source-manifest.json)及 [Apache-2.0 许可证](Glasses/SatoriCapture/app/src/main/assets/vosk-model-small-cn/LICENSE-APACHE-2.0.txt)。
 
 公开数据评测所需的其他数据及模型通过各自来源获取。仓库内的合成演示和语音测试样例用于功能验证。网页回放中的六分钟视频、音轨、转写和取景帧来自本项目的实机实验。

@@ -1,0 +1,518 @@
+{
+  "paired_candidates": 31,
+  "protocol": {
+    "direct_at_D0": "issue all original candidates at direct_s",
+    "all_sent_after_same_delay_at_D1": "issue all candidates at review_s irrespective of gate (latency-only control)",
+    "gate_at_D1": "issue keeps at review_s; cancel, hold and technical error are withheld in this one-shot replay",
+    "labels": "valid/obsolete/unknown describe the visual evidence at that instant; no TTS or listener feedback",
+    "D0_withheld_by_decision": "cancel and hold only; technical errors counted separately"
+  },
+  "source_sha256": {
+    "predictions": "7b2155f6cafac616d8595f9cdcc10d94dbcc93877219619485af7ad13d7e1d4a",
+    "labels": "adc3aed138da204162d9b1babb006cc248bbf450aaba0e12d73c6b824d5affe7"
+  },
+  "overall": {
+    "candidate_count": 31,
+    "verdict_counts": {
+      "keep": 14,
+      "cancel": 6,
+      "hold": 11,
+      "error": 0
+    },
+    "direct_at_D0": {
+      "issued": 31,
+      "valid": 14,
+      "obsolete": 5,
+      "unknown": 12,
+      "known": 19,
+      "obsolete_fraction_among_known": 0.2631578947368421
+    },
+    "all_sent_after_same_delay_at_D1": {
+      "issued": 31,
+      "valid": 10,
+      "obsolete": 8,
+      "unknown": 13,
+      "known": 18,
+      "obsolete_fraction_among_known": 0.4444444444444444
+    },
+    "gate_at_D1": {
+      "issued": 14,
+      "valid": 7,
+      "obsolete": 3,
+      "unknown": 4,
+      "known": 10,
+      "obsolete_fraction_among_known": 0.3
+    },
+    "D0_label_by_verdict": {
+      "valid": {
+        "keep": 13,
+        "cancel": 0,
+        "hold": 1,
+        "error": 0
+      },
+      "obsolete": {
+        "keep": 0,
+        "cancel": 4,
+        "hold": 1,
+        "error": 0
+      },
+      "unknown": {
+        "keep": 1,
+        "cancel": 2,
+        "hold": 9,
+        "error": 0
+      }
+    },
+    "D1_label_by_verdict": {
+      "valid": {
+        "keep": 7,
+        "cancel": 0,
+        "hold": 3,
+        "error": 0
+      },
+      "obsolete": {
+        "keep": 3,
+        "cancel": 4,
+        "hold": 1,
+        "error": 0
+      },
+      "unknown": {
+        "keep": 4,
+        "cancel": 2,
+        "hold": 7,
+        "error": 0
+      }
+    },
+    "kept_D0_to_D1": {
+      "valid": {
+        "valid": 7,
+        "obsolete": 2,
+        "unknown": 4
+      },
+      "obsolete": {
+        "valid": 0,
+        "obsolete": 0,
+        "unknown": 0
+      },
+      "unknown": {
+        "valid": 0,
+        "obsolete": 1,
+        "unknown": 0
+      }
+    },
+    "obsolete_at_D0_withheld_by_decision": 5,
+    "valid_at_D0_withheld_by_decision": 1,
+    "kept_valid_at_D0_obsolete_at_D1": 2,
+    "extra_time_s_all_candidates": {
+      "n": 31,
+      "median": 5.604239999956917,
+      "p95": 9.413839749991894,
+      "max": 12.947293800010812
+    },
+    "extra_time_s_for_issued_median": 5.974605200026417
+  },
+  "by_model": {
+    "gpt-6.2-astra": {
+      "candidate_count": 17,
+      "verdict_counts": {
+        "keep": 7,
+        "cancel": 4,
+        "hold": 6,
+        "error": 0
+      },
+      "direct_at_D0": {
+        "issued": 17,
+        "valid": 7,
+        "obsolete": 2,
+        "unknown": 8,
+        "known": 9,
+        "obsolete_fraction_among_known": 0.2222222222222222
+      },
+      "all_sent_after_same_delay_at_D1": {
+        "issued": 17,
+        "valid": 6,
+        "obsolete": 4,
+        "unknown": 7,
+        "known": 10,
+        "obsolete_fraction_among_known": 0.4
+      },
+      "gate_at_D1": {
+        "issued": 7,
+        "valid": 3,
+        "obsolete": 2,
+        "unknown": 2,
+        "known": 5,
+        "obsolete_fraction_among_known": 0.4
+      },
+      "D0_label_by_verdict": {
+        "valid": {
+          "keep": 6,
+          "cancel": 0,
+          "hold": 1,
+          "error": 0
+        },
+        "obsolete": {
+          "keep": 0,
+          "cancel": 2,
+          "hold": 0,
+          "error": 0
+        },
+        "unknown": {
+          "keep": 1,
+          "cancel": 2,
+          "hold": 5,
+          "error": 0
+        }
+      },
+      "D1_label_by_verdict": {
+        "valid": {
+          "keep": 3,
+          "cancel": 0,
+          "hold": 3,
+          "error": 0
+        },
+        "obsolete": {
+          "keep": 2,
+          "cancel": 2,
+          "hold": 0,
+          "error": 0
+        },
+        "unknown": {
+          "keep": 2,
+          "cancel": 2,
+          "hold": 3,
+          "error": 0
+        }
+      },
+      "kept_D0_to_D1": {
+        "valid": {
+          "valid": 3,
+          "obsolete": 1,
+          "unknown": 2
+        },
+        "obsolete": {
+          "valid": 0,
+          "obsolete": 0,
+          "unknown": 0
+        },
+        "unknown": {
+          "valid": 0,
+          "obsolete": 1,
+          "unknown": 0
+        }
+      },
+      "obsolete_at_D0_withheld_by_decision": 2,
+      "valid_at_D0_withheld_by_decision": 1,
+      "kept_valid_at_D0_obsolete_at_D1": 1,
+      "extra_time_s_all_candidates": {
+        "n": 17,
+        "median": 6.0664901999989524,
+        "p95": 8.22109899999341,
+        "max": 12.947293800010812
+      },
+      "extra_time_s_for_issued_median": 6.088468900008593
+    },
+    "gpt-6.2-sol": {
+      "candidate_count": 14,
+      "verdict_counts": {
+        "keep": 7,
+        "cancel": 2,
+        "hold": 5,
+        "error": 0
+      },
+      "direct_at_D0": {
+        "issued": 14,
+        "valid": 7,
+        "obsolete": 3,
+        "unknown": 4,
+        "known": 10,
+        "obsolete_fraction_among_known": 0.3
+      },
+      "all_sent_after_same_delay_at_D1": {
+        "issued": 14,
+        "valid": 4,
+        "obsolete": 4,
+        "unknown": 6,
+        "known": 8,
+        "obsolete_fraction_among_known": 0.5
+      },
+      "gate_at_D1": {
+        "issued": 7,
+        "valid": 4,
+        "obsolete": 1,
+        "unknown": 2,
+        "known": 5,
+        "obsolete_fraction_among_known": 0.2
+      },
+      "D0_label_by_verdict": {
+        "valid": {
+          "keep": 7,
+          "cancel": 0,
+          "hold": 0,
+          "error": 0
+        },
+        "obsolete": {
+          "keep": 0,
+          "cancel": 2,
+          "hold": 1,
+          "error": 0
+        },
+        "unknown": {
+          "keep": 0,
+          "cancel": 0,
+          "hold": 4,
+          "error": 0
+        }
+      },
+      "D1_label_by_verdict": {
+        "valid": {
+          "keep": 4,
+          "cancel": 0,
+          "hold": 0,
+          "error": 0
+        },
+        "obsolete": {
+          "keep": 1,
+          "cancel": 2,
+          "hold": 1,
+          "error": 0
+        },
+        "unknown": {
+          "keep": 2,
+          "cancel": 0,
+          "hold": 4,
+          "error": 0
+        }
+      },
+      "kept_D0_to_D1": {
+        "valid": {
+          "valid": 4,
+          "obsolete": 1,
+          "unknown": 2
+        },
+        "obsolete": {
+          "valid": 0,
+          "obsolete": 0,
+          "unknown": 0
+        },
+        "unknown": {
+          "valid": 0,
+          "obsolete": 0,
+          "unknown": 0
+        }
+      },
+      "obsolete_at_D0_withheld_by_decision": 3,
+      "valid_at_D0_withheld_by_decision": 0,
+      "kept_valid_at_D0_obsolete_at_D1": 1,
+      "extra_time_s_all_candidates": {
+        "n": 14,
+        "median": 4.579304400016554,
+        "p95": 8.521409054994,
+        "max": 11.788129199994728
+      },
+      "extra_time_s_for_issued_median": 4.747789899993222
+    }
+  },
+  "by_sequence_id": {
+    "sequence-01": {
+      "candidate_count": 15,
+      "verdict_counts": {
+        "keep": 10,
+        "cancel": 4,
+        "hold": 1,
+        "error": 0
+      },
+      "direct_at_D0": {
+        "issued": 15,
+        "valid": 10,
+        "obsolete": 4,
+        "unknown": 1,
+        "known": 14,
+        "obsolete_fraction_among_known": 0.2857142857142857
+      },
+      "all_sent_after_same_delay_at_D1": {
+        "issued": 15,
+        "valid": 5,
+        "obsolete": 7,
+        "unknown": 3,
+        "known": 12,
+        "obsolete_fraction_among_known": 0.5833333333333334
+      },
+      "gate_at_D1": {
+        "issued": 10,
+        "valid": 4,
+        "obsolete": 3,
+        "unknown": 3,
+        "known": 7,
+        "obsolete_fraction_among_known": 0.42857142857142855
+      },
+      "D0_label_by_verdict": {
+        "valid": {
+          "keep": 9,
+          "cancel": 0,
+          "hold": 1,
+          "error": 0
+        },
+        "obsolete": {
+          "keep": 0,
+          "cancel": 4,
+          "hold": 0,
+          "error": 0
+        },
+        "unknown": {
+          "keep": 1,
+          "cancel": 0,
+          "hold": 0,
+          "error": 0
+        }
+      },
+      "D1_label_by_verdict": {
+        "valid": {
+          "keep": 4,
+          "cancel": 0,
+          "hold": 1,
+          "error": 0
+        },
+        "obsolete": {
+          "keep": 3,
+          "cancel": 4,
+          "hold": 0,
+          "error": 0
+        },
+        "unknown": {
+          "keep": 3,
+          "cancel": 0,
+          "hold": 0,
+          "error": 0
+        }
+      },
+      "kept_D0_to_D1": {
+        "valid": {
+          "valid": 4,
+          "obsolete": 2,
+          "unknown": 3
+        },
+        "obsolete": {
+          "valid": 0,
+          "obsolete": 0,
+          "unknown": 0
+        },
+        "unknown": {
+          "valid": 0,
+          "obsolete": 1,
+          "unknown": 0
+        }
+      },
+      "obsolete_at_D0_withheld_by_decision": 4,
+      "valid_at_D0_withheld_by_decision": 1,
+      "kept_valid_at_D0_obsolete_at_D1": 2,
+      "extra_time_s_all_candidates": {
+        "n": 15,
+        "median": 5.4651230000308715,
+        "p95": 8.023430219996953,
+        "max": 11.788129199994728
+      },
+      "extra_time_s_for_issued_median": 5.835365099977935
+    },
+    "sequence-02": {
+      "candidate_count": 16,
+      "verdict_counts": {
+        "keep": 4,
+        "cancel": 2,
+        "hold": 10,
+        "error": 0
+      },
+      "direct_at_D0": {
+        "issued": 16,
+        "valid": 4,
+        "obsolete": 1,
+        "unknown": 11,
+        "known": 5,
+        "obsolete_fraction_among_known": 0.2
+      },
+      "all_sent_after_same_delay_at_D1": {
+        "issued": 16,
+        "valid": 5,
+        "obsolete": 1,
+        "unknown": 10,
+        "known": 6,
+        "obsolete_fraction_among_known": 0.16666666666666666
+      },
+      "gate_at_D1": {
+        "issued": 4,
+        "valid": 3,
+        "obsolete": 0,
+        "unknown": 1,
+        "known": 3,
+        "obsolete_fraction_among_known": 0.0
+      },
+      "D0_label_by_verdict": {
+        "valid": {
+          "keep": 4,
+          "cancel": 0,
+          "hold": 0,
+          "error": 0
+        },
+        "obsolete": {
+          "keep": 0,
+          "cancel": 0,
+          "hold": 1,
+          "error": 0
+        },
+        "unknown": {
+          "keep": 0,
+          "cancel": 2,
+          "hold": 9,
+          "error": 0
+        }
+      },
+      "D1_label_by_verdict": {
+        "valid": {
+          "keep": 3,
+          "cancel": 0,
+          "hold": 2,
+          "error": 0
+        },
+        "obsolete": {
+          "keep": 0,
+          "cancel": 0,
+          "hold": 1,
+          "error": 0
+        },
+        "unknown": {
+          "keep": 1,
+          "cancel": 2,
+          "hold": 7,
+          "error": 0
+        }
+      },
+      "kept_D0_to_D1": {
+        "valid": {
+          "valid": 3,
+          "obsolete": 0,
+          "unknown": 1
+        },
+        "obsolete": {
+          "valid": 0,
+          "obsolete": 0,
+          "unknown": 0
+        },
+        "unknown": {
+          "valid": 0,
+          "obsolete": 0,
+          "unknown": 0
+        }
+      },
+      "obsolete_at_D0_withheld_by_decision": 1,
+      "valid_at_D0_withheld_by_decision": 0,
+      "kept_valid_at_D0_obsolete_at_D1": 0,
+      "extra_time_s_all_candidates": {
+        "n": 16,
+        "median": 5.908129950024886,
+        "p95": 8.516486174994498,
+        "max": 12.947293800010812
+      },
+      "extra_time_s_for_issued_median": 6.0532887000299525
+    }
+  }
+}

@@ -1,0 +1,27 @@
+CaptainCook4D media in the Satori-Rokid delivery-time recheck study
+
+Original dataset: CaptainCook4D: A Dataset for Understanding Errors in Procedural Activities
+Authors: Rohith Peddi, Shivvrat Arya, Bharath Challa, Likhitha Pallapothula,
+Akshay Vyas, Bhavya Gouripeddi, Qifan Zhang, Jikai Wang, Vasundhara Komaragiri,
+Eric Ragan, Nicholas Ruozzi, Yu Xiang and Vibhav Gogate (NeurIPS 2024).
+Copyright 2023 The University of Texas at Dallas.
+Data license: Apache License, Version 2.0. See LICENSE-CaptainCook4D.txt.
+Project and data license: https://captaincook4d.github.io/captain-cook/
+Original GoPro video listing: https://captaincook4d.github.io/captain-cook/data2d.html
+Paper: https://proceedings.neurips.cc/paper_files/paper/2024/file/f4a04396c2ed1342a5d8d05e94cb6101-Paper-Datasets_and_Benchmarks_Track.pdf
+
+Changes for Satori-Rokid (2026-11-23)
+- sequence-01-4k.mp4 is derived from Scrambled Eggs / GoPro recording 16_40.
+- sequence-02-4k.mp4 is derived from Scrambled Eggs / GoPro recording 16_3.
+- Both original 3840x2160 HEVC video streams were transcoded to browser-friendly
+  H.264. The video frame order and presentation timestamps were preserved. Audio,
+  other tracks, and original container metadata were omitted from these derivatives.
+- The posters in media/ and the 62 images in frames/ are resized JPEG extracts
+  from the corresponding lower-resolution video streams of these two recordings.
+- The interactive overlays, model decisions, additional visual assessments,
+  charts, and timing statistics were produced for this Satori-Rokid experiment.
+  They are not annotations endorsed by the CaptainCook4D authors.
+
+Published video files and accompanying license:
+https://github.com/findscripter/Satori-Rokid/releases/tag/recheck-4k-2026-11-23
+Full license: https://www.apache.org/licenses/LICENSE-2.0

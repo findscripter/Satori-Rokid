@@ -4,6 +4,8 @@
 
 ### Rokid 眼镜与交互回放
 
+**[4K 长视频主动提醒分析](https://findscripter.github.io/Satori-Rokid/recheck/)** 展示两段 CaptainCook4D 第一视角录像（27:53 与 41:08）。按原时间线播放即可看到 GPT‑6.2 的候选提示和交付前复核决定，也可逐条查看 31 条提醒对应的画面和评审分歧。该回放对应未提供显式任务目标的实验条件。页面及 62 张对照图位于 [site/recheck](site/recheck/)，两条完整无声 MP4 位于[视频 Release](https://github.com/findscripter/Satori-Rokid/releases/tag/recheck-4k-2026-11-23)。[素材来源与修改说明](site/recheck/MEDIA-NOTICE.txt)
+
 **[在线回看六分钟第一视角实验](https://findscripter.github.io/Satori-Rokid/replay/)**。点击用户发言或助手答复就能跳到视频对应时刻，也可以沿时间轴查看播报和眼镜取景帧。该片段有 7 次对话请求，其中 6 次收到答复、1 次撤销。
 
 眼镜端根据用户当下提出的任务工作，普通追问会附上当轮第一视角图像，答复自动朗读。支持语音控制第一视角有声录像并导出交互与 IMU 记录。[眼镜端构建与使用](Glasses/SatoriCapture/README.md) · [离线回放文件](site/replay/)

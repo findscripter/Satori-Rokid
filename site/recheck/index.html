@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light"><title>Satori · 提醒交付前复核</title>
+  <link rel="stylesheet" href="study.css"><link rel="stylesheet" href="live-layout.css"><link rel="stylesheet" href="live-events.css">
+  <script defer src="data.js"></script><script defer src="live.js"></script><script defer src="study.js"></script>
+</head>
+<body>
+  <a class="skip" href="#live">跳到视频回放</a>
+  <header class="mast"><div class="wrap mast-in">
+    <div class="identity"><span class="mark" aria-hidden="true"></span><b>Satori</b></div>
+    <span class="divider"></span><a class="lab" href="../replay/">眼镜实测回放</a>
+    <nav aria-label="页内导航"><a href="#live">动态回放</a><a href="#overview">结果概览</a><a href="#cases">逐条分析</a></nav>
+    <a class="download" href="downloads/paired-reminders.csv" download="31条提醒的配对结果.csv"><span aria-hidden="true">↓</span> 下载明细</a>
+  </div></header>
+  <main class="wrap">
+    <div class="hero"><div class="info-line"><time datetime="2026-11-23">2026.11.23</time><span>第一视角长视频</span><span>GPT‑6.2 Astra / Sol</span></div>
+      <h1>提醒到达时，还有效吗？</h1>
+      <p>随原始录像时间线查看提醒，比较直接交付与复核后交付的时机。</p>
+    </div>
+    <noscript>请启用浏览器的 JavaScript 以查看图表和交互案例。</noscript>
+    <section id="live" class="card live-card" aria-labelledby="liveTitle">
+      <div class="live-top">
+        <h2 id="liveTitle">动态回放</h2>
+        <div class="live-settings">
+          <label>录像<select id="liveSeq"><option value="1">录像一 · 27:53</option><option value="2">录像二 · 41:08</option></select></label>
+          <label>模型<select id="liveModel"><option value="both">两种模型</option><option value="Astra">6.2 Astra</option><option value="Sol">6.2 Sol</option></select></label>
+          <label>展示<select id="liveMode"><option value="audit" selected>完整复核过程</option><option value="gated">复核后交付</option><option value="direct">直接交付</option></select></label>
+        </div>
+      </div>
+      <div class="live-work">
+        <div class="live-player">
+          <div id="liveStage">
+            <video id="liveVideo" controls playsinline controlslist="nofullscreen" disablepictureinpicture preload="metadata" aria-label="完整第一视角 4K 无声录像"></video>
+            <div id="liveLayer">
+              <div id="liveToast" hidden aria-live="polite" aria-atomic="true">
+                <div class="toast-head"><strong id="toastMeta"></strong><time id="toastTime"></time><button type="button" id="dismissToast" aria-label="关闭当前交互提示">×</button></div>
+                <div id="toastText"></div>
+              </div>
+            </div>
+            <button type="button" id="liveFull" aria-label="全屏显示录像和交互">全屏 ⛶</button>
+          </div>
+          <div class="live-controls">
+            <span class="quality">4K</span><span id="liveTime">00:00</span>
+            <label class="speed-label">速度 <select id="liveSpeed"><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+            <button type="button" id="liveNext">播放下一次交互 ▸</button>
+          </div>
+        </div>
+        <aside class="live-events" aria-label="随视频同步的事件">
+          <div class="events-head"><h3>交互时间线</h3><span id="liveCount"></span></div>
+          <div id="liveList" tabindex="0"></div>
+        </aside>
+      </div>
+      <div class="live-caption"><span id="liveNotice" role="status"></span><span>画面来自 CaptainCook4D 的 4K GoPro 原片。弹窗按实验记录的预计文字交付时刻显示。模型当时使用低分辨率图像。</span></div>
+    </section>
+    <section id="overview" aria-label="实验结果概览" class="overview">
+      <div class="metrics">
+        <div class="metric"><span>候选提醒</span><strong>31 <small>条</small></strong><p>2 段录像 · 22 个不同的候选时刻</p></div>
+        <div class="metric"><span>复核后交付</span><strong>14 <small>/ 31 条</small></strong><p>其余 6 条取消，11 条暂缓</p></div>
+        <div class="metric"><span>新增等待中位数</span><strong class="time-num">+5.60 <small>秒</small></strong><p>取帧至复核完成，未计语音播报</p></div>
+      </div>
+      <article class="card results">
+        <div class="bar-head"><div><h2>三种策略的交付结果</h2><p>每行均为同一批 31 条候选，按各策略预计交付时的画面判定。</p></div>
+          <div class="seg" aria-label="图表单位" role="group"><button id="asCount" aria-pressed="true">条数</button><button id="asPct" aria-pressed="false">占比</button></div>
+        </div>
+        <div class="legend"><span><i class="valid"></i>仍适用</span><span><i class="obsolete"></i>已过时</span><span><i class="unknown"></i>无法确定</span><span><i class="withheld"></i>未交付</span></div>
+        <div id="chart"></div>
+        <div class="finding"><b>复核的取舍</b><p>原交付时已过时的 <strong>5 条全部被拦住</strong>。原本适用的 14 条里，等复核完成，只有 <strong>7 条被交付且仍能确认适用</strong>。</p></div>
+      </article>
+    </section>
+    <section id="cases" aria-labelledby="casesTitle">
+      <div class="section-head"><div><h2 id="casesTitle">逐条分析</h2><p>比较同一句提醒在两个时刻的画面，也可定位到上方 4K 录像。</p></div><div id="caseCount" aria-live="polite"></div></div>
+      <div class="filters">
+        <label>模型<select id="model"><option value="">全部模型</option><option>Astra</option><option>Sol</option></select></label>
+        <label>录像<select id="seq"><option value="">全部录像</option><option value="1">录像一 · 27:53</option><option value="2">录像二 · 41:08</option></select></label>
+        <label>复核决定<select id="verdict"><option value="">全部决定</option><option value="keep">保留</option><option value="hold">暂缓</option><option value="cancel">取消</option></select></label>
+        <label>案例<select id="special"><option value="">全部案例</option><option value="intercept">拦住了过时提醒</option><option value="late">通过后变过时</option><option value="miss">暂缓了适用提醒</option></select></label>
+        <button class="reset" id="reset">重置筛选</button>
+      </div>
+      <div class="workspace">
+        <aside class="card catalog"><div class="catalog-title"><h3>提醒列表</h3><span>按录像时间</span></div><div id="list" aria-label="匹配的提醒"></div></aside>
+        <article class="card inspect" id="detail" aria-label="当前案例">
+          <div class="inspect-head"><span id="which"></span><span id="decisionPill" class="pill"></span></div>
+          <h3 id="message"></h3>
+          <div class="origin"><span id="created"></span><details id="original"><summary>英文原文</summary><p id="messageEn" lang="en"></p></details></div>
+          <div class="viewbar"><div class="case-view"><b>画面对照</b><button type="button" id="clipTab">在 4K 中回放 ▸</button></div><span id="latency"></span></div>
+          <div id="comparison" class="comparison"></div>
+          <div class="decision-note"><b>模型的复核理由</b><p id="reason"></p></div>
+          <details id="evidence" class="evidence"><summary>查看双评审依据与有效时间窗</summary><div id="rationale"></div></details>
+        </article>
+        <div id="empty" class="card" hidden><p>当前组合没有匹配的提醒。</p><button id="emptyReset" class="reset">显示全部案例</button></div>
+      </div>
+    </section>
+    <section class="card methods" id="method"><h2>评审口径与数据</h2>
+      <div class="methods-grid"><div><h3>两个交付时刻</h3><p>第一个时刻是原模型生成完整提醒之时。此时取一张新帧交给原型号复核，第二个时刻是复核结果返回之时。复核模型只能看到第一个时刻的帧。</p></div>
+      <div><h3>如何判定仍适用</h3><p>两位独立 AI 评审在隐藏模型决定的情况下看图，核对特定建议的可见前提。62 项中有 56 项判定一致；视野不足或评审分歧统一记为“无法确定”。</p></div>
+      <div><h3>结果适用范围</h3><p>两段录像来自同一参与者完成同一食谱。这里评价的是画面与提示的相关性；用户是否受益、是否感到打扰，需要真人实验。</p></div></div>
+      <div class="files"><a href="downloads/paired-reminders.csv" download>逐条结果 CSV ↗</a><a href="downloads/ratings.csv" download>双评审记录 CSV ↗</a><a href="downloads/windows.csv" download>观察时间窗 CSV ↗</a><a href="downloads/metrics.json" download>汇总指标 JSON ↗</a></div>
+      <div class="media-origin">
+        <h3>视频来源与下载</h3>
+        <p>CaptainCook4D · Rohith Peddi 等 · NeurIPS 2024。Copyright 2023 The University of Texas at Dallas. 视频依据 Apache License 2.0 发布。本项目将 16_40 与 16_3 的 GoPro 原片转为无声 4K H.264，保留原时间轴；对照图由对应录像抽帧、缩放并编码为 JPEG。提醒和评审由 Satori 实验生成。</p>
+        <div class="files"><a href="https://github.com/findscripter/Satori-Rokid/releases/download/recheck-4k-2026-11-23/sequence-01-4k.mp4">下载录像一 · 4K</a><a href="https://github.com/findscripter/Satori-Rokid/releases/download/recheck-4k-2026-11-23/sequence-02-4k.mp4">下载录像二 · 4K</a><a href="https://captaincook4d.github.io/captain-cook/data2d.html">官方原片目录</a><a href="MEDIA-NOTICE.txt">素材及修改说明</a><a href="LICENSE-CaptainCook4D.txt">许可证全文</a></div>
+        <label class="local-pick">为当前录像选择已下载的 4K 文件 <input type="file" id="localVideoFile" accept="video/mp4,.mp4"></label>
+      </div>
+    </section>
+  </main>
+  <dialog id="light"><div class="light-head"><b id="lightTitle"></b><button id="closeLight" aria-label="关闭大图">关闭 ×</button></div><img id="lightImg" alt=""></dialog>
+</body></html>

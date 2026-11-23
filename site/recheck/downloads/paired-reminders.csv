@@ -1,0 +1,32 @@
+﻿id,model,sequence_id,decision_s,direct_s,review_s,recheck_latency_s,verdict,message,direct_label,review_label
+gpt-6.2-astra_sequence-01_60,gpt-6.2-astra,sequence-01,60,66.84510840004077,72.93357730004936,6.088468900008593,keep,"Turn the handle inward, away from the other burners, so it won’t get bumped.",valid,valid
+gpt-6.2-astra_sequence-01_180,gpt-6.2-astra,sequence-01,180,188.07824110001093,194.48822890000883,6.409987799997907,keep,Tuck your left fingertips into a claw grip so your knuckles guide the blade.,unknown,obsolete
+gpt-6.2-sol_sequence-01_180,gpt-6.2-sol,sequence-01,180,186.13519579998683,190.88298569998005,4.747789899993222,keep,Curl your fingertips under to keep them clear of the blade.,valid,obsolete
+gpt-6.2-astra_sequence-01_360,gpt-6.2-astra,sequence-01,360,369.5134885000298,375.62070320005296,6.107214700023178,keep,Move the plastic bag off the stovetop so it can’t melt against a hot burner.,valid,obsolete
+gpt-6.2-astra_sequence-01_420,gpt-6.2-astra,sequence-01,420,427.75471409998136,433.2198371000122,5.4651230000308715,cancel,Tuck your left fingertips back from the blade before the next cut.,obsolete,obsolete
+gpt-6.2-sol_sequence-01_420,gpt-6.2-sol,sequence-01,420,426.81935219996376,430.8844721999485,4.065119999984745,cancel,Move your fingertips clear before sliding the knife under the greens.,obsolete,obsolete
+gpt-6.2-astra_sequence-01_480,gpt-6.2-astra,sequence-01,480,485.9225665999693,490.812155899941,4.889589299971703,cancel,Set the knife down and tap the egg on the counter to crack it.,obsolete,obsolete
+gpt-6.2-astra_sequence-01_570,gpt-6.2-astra,sequence-01,570,575.6627641999512,581.7292543999502,6.0664901999989524,keep,Curl your fingertips back so your knuckles guide the blade.,valid,unknown
+gpt-6.2-sol_sequence-01_630,gpt-6.2-sol,sequence-01,630,636.0937985999626,642.2500186999678,6.156220100005157,cancel,Curl your fingertips under as you chop.,obsolete,obsolete
+gpt-6.2-astra_sequence-01_720,gpt-6.2-astra,sequence-01,720,729.6521212999942,734.3989633999881,4.746842099993955,hold,"Turn the skillet handle inward, clear of the other burners, so it won’t get bumped.",valid,valid
+gpt-6.2-sol_sequence-01_840,gpt-6.2-sol,sequence-01,840,846.3099842999945,850.4157020999701,4.105717799975537,keep,Turn the skillet handle inward so it won’t get bumped.,valid,valid
+gpt-6.2-astra_sequence-01_1080,gpt-6.2-astra,sequence-01,1080,1086.7653975999565,1092.0864707999863,5.321073200029787,keep,"Turn the skillet handle inward, clear of the other burners, so it won’t get bumped.",valid,unknown
+gpt-6.2-astra_sequence-01_1290,gpt-6.2-astra,sequence-01,1290,1294.9036205000011,1300.507860499958,5.604239999956917,keep,"Turn the skillet handle inward, clear of the other burners, so it won’t get bumped.",valid,valid
+gpt-6.2-sol_sequence-01_1290,gpt-6.2-sol,sequence-01,1290,1295.0615200999891,1299.472339000029,4.410818900039885,keep,Turn the skillet handle to the side so it won’t get bumped.,valid,valid
+gpt-6.2-sol_sequence-01_1560,gpt-6.2-sol,sequence-01,1560,1565.9820732999942,1577.770202499989,11.788129199994728,keep,Turn the skillet handle to the side so it doesn’t get bumped.,valid,unknown
+gpt-6.2-sol_sequence-02_60,gpt-6.2-sol,sequence-02,60,70.04138539999258,75.92410560004646,5.882720200053882,keep,Slide the cutting board fully onto the counter before cutting.,valid,valid
+gpt-6.2-astra_sequence-02_120,gpt-6.2-astra,sequence-02,120,129.46805150003638,134.24600799998734,4.77795649995096,hold,Watch your step around the cord beside your feet.,unknown,valid
+gpt-6.2-sol_sequence-02_120,gpt-6.2-sol,sequence-02,120,126.08038309996482,130.33261889993446,4.25223579996964,hold,Watch for the cord by your feet before stepping back.,unknown,unknown
+gpt-6.2-astra_sequence-02_570,gpt-6.2-astra,sequence-02,570,577.5429839999997,583.7668412000057,6.223857200006023,keep,Watch your step around the cord.,valid,valid
+gpt-6.2-sol_sequence-02_570,gpt-6.2-sol,sequence-02,570,574.5683949999511,581.0906097999541,6.522214800002985,keep,Watch your step around the cord.,valid,valid
+gpt-6.2-astra_sequence-02_750,gpt-6.2-astra,sequence-02,750,757.5382548999623,762.1224287999794,4.584173900017049,hold,Move the cord out of the walkway so it won’t catch your foot.,unknown,unknown
+gpt-6.2-sol_sequence-02_750,gpt-6.2-sol,sequence-02,750,754.7630842999788,760.6966239999747,5.93353969999589,hold,Move the cord out of the walkway to avoid tripping.,unknown,unknown
+gpt-6.2-astra_sequence-02_990,gpt-6.2-astra,sequence-02,990,998.3895947000128,1005.3570350999944,6.9674403999815695,cancel,Set the knife flat and use a utensil to clear the garlic from the blade.,unknown,unknown
+gpt-6.2-sol_sequence-02_990,gpt-6.2-sol,sequence-02,990,995.9065717000049,1002.6689775999985,6.76240589999361,hold,Tap the blade lightly against the board to loosen the garlic instead.,obsolete,unknown
+gpt-6.2-astra_sequence-02_1440,gpt-6.2-astra,sequence-02,1440,1445.795651499997,1452.395633200009,6.599981700011995,hold,Check the pan now; turn the burner off if you need to focus on the laptop.,unknown,valid
+gpt-6.2-sol_sequence-02_1440,gpt-6.2-sol,sequence-02,1440,1445.378947900026,1449.7765423000674,4.397594400041271,hold,Turn off the front-right burner while you’re away from the stove.,unknown,unknown
+gpt-6.2-astra_sequence-02_1500,gpt-6.2-astra,sequence-02,1500,1506.7536092000082,1511.6257382999756,4.872129099967424,hold,Move the paper towel roll farther from the burner.,unknown,unknown
+gpt-6.2-sol_sequence-02_1620,gpt-6.2-sol,sequence-02,1620,1625.4893792000366,1629.8922234000638,4.402844200027175,hold,Check the pan before spending more time away from the stove.,unknown,obsolete
+gpt-6.2-astra_sequence-02_2040,gpt-6.2-astra,sequence-02,2040,2048.473874499963,2061.421168299974,12.947293800010812,cancel,Use a dry oven mitt to lift the lid; the metal knob may be hot.,unknown,unknown
+gpt-6.2-astra_sequence-02_2400,gpt-6.2-astra,sequence-02,2400,2406.2894469000166,2413.3289972000057,7.03955029998906,hold,Watch your step—move the cord out of the walkway.,unknown,unknown
+gpt-6.2-sol_sequence-02_2400,gpt-6.2-sol,sequence-02,2400,2404.610352799995,2408.5815728000016,3.971220000006724,keep,Watch your step and move the cord out of the walkway.,valid,unknown
